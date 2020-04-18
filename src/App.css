@@ -44,7 +44,7 @@
 }
 .ant-layout-header{
    background-color: #fff !important;
-   height: 250px !important;
+   height: 750px !important;
 }
 .ant-layout-footer {
   background: #7dbcea;
@@ -110,4 +110,49 @@ background:#fff !important;
 .card-image{
   height: 300px;
   object-fit: contain;
+}
+
+/* For demo */
+.ant-carousel .slick-slide {
+  text-align: center;
+  height: 160px;
+  line-height: 160px;
+  overflow: hidden;
+}
+
+.ant-carousel .slick-slide h3 {
+  color: #fff;
+}
+ 
+
+ .ant-carousel .slick-slide img {
+   object-fit: cover;
+    width: 100%;
+    height: 100%;
+}
+
+.dots-button{
+ 
+  height: 30px;
+}
+
+.slick-dots.slick-dots-bottom.dots-button li button {
+  clear: both;
+  padding: 10px;
+  border-radius: 30px;
+  font-family: Helvetica, Arial, sans-serif;
+  border: solid 2px #86BB71;
+}
+
+.slick-dots.slick-dots-bottom.dots-button li.slick-active button {
+ background-color: brown;
+}
+
+ 
+
+.slick-slide div div {
+display: -webkit-box !important;
+height: 500px;
+background-color:red;
+-webkit-box-pack: center;
 }

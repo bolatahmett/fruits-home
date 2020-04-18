@@ -1,6 +1,6 @@
 import './App.css';
 import React from 'react';
-import { Menu, Row, Col, Card, Avatar, Layout, Space, Input } from 'antd';
+import { Menu, Row, Col, Card, Avatar, Layout, Space, Input, Carousel } from 'antd';
 import { PhoneOutlined, HomeOutlined, SettingOutlined } from '@ant-design/icons';
 import 'antd/dist/antd.css';
 import FHMenu from './components/FHMenu';
@@ -93,6 +93,43 @@ export default class App extends React.Component {
                     <Row style={{ width: "100%" }}>
                       <Col span={24}>
                         дома/помидоры
+                      </Col>
+                    </Row>
+                    <Row style={{ width: "100%" }}>
+                      <Col span={24}>
+                        <Carousel autoplay dots={{ className: "dots-button" }}>
+                          <div>
+                            <img
+                              alt="example"
+                              src={require("./images/header4.jpeg")}
+                            />
+                          </div>
+
+                          <div style={{ contain: " content" }}>
+                            <img
+                              alt="example"
+                              src={require("./images/domates.jpeg")}
+
+                            />
+                          </div>
+
+                          <div style={{ contain: " content" }}>
+                            <img
+                              alt="example"
+                              src={require("./images/header3.jpeg")}
+                            />
+                          </div>
+
+                          <div style={{ contain: " content" }}>
+                            <img
+                              alt="example"
+                              src={require("./images/header.jpeg")}
+
+                            />
+                          </div>
+
+                        </Carousel>
+
                       </Col>
                     </Row>
                   </Row>
