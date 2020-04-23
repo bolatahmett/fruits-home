@@ -27,9 +27,8 @@ export default class App extends React.Component {
     return (
       <>
 
-        <Row>
-          <Col span={4}></Col>
-          <Col span={16}>
+        <Row style={{ paddingLeft: "2px", paddingRight: "2px" }}>
+          <Col span={24}>
             <Layout>
 
 
@@ -135,7 +134,7 @@ export default class App extends React.Component {
 
               </Header>
 
-              <Layout style={{ height: "100vh" }}>
+              <Layout style={{ height: "100%" }}>
                 <Sider>
                   <FHMenu></FHMenu>
                 </Sider>
@@ -143,7 +142,7 @@ export default class App extends React.Component {
                   <Row>
                     <Col span={9} offset={3}>
                       <Card
-                        style={{ width: 400 }}
+
                         cover={
                           <img
                             alt="example"
@@ -172,7 +171,7 @@ export default class App extends React.Component {
                     </Col>
                     <Col span={9} offset={1}>
                       <Card
-                        style={{ width: 400 }}
+
                         cover={
                           <img
                             alt="example"
@@ -204,7 +203,7 @@ export default class App extends React.Component {
                   <Row>
                     <Col span={9} offset={3}>
                       <Card
-                        style={{ width: 400 }}
+
                         cover={
                           <img
                             alt="example"
@@ -233,7 +232,7 @@ export default class App extends React.Component {
                     </Col>
                     <Col span={9} offset={1}>
                       <Card
-                        style={{ width: 400 }}
+
                         cover={
                           <img
                             alt="example"
@@ -265,7 +264,7 @@ export default class App extends React.Component {
                   <Row>
                     <Col span={9} offset={3}>
                       <Card
-                        style={{ width: 400 }}
+
                         cover={
                           <img
                             alt="example"
@@ -294,7 +293,7 @@ export default class App extends React.Component {
                     </Col>
                     <Col span={9} offset={1}>
                       <Card
-                        style={{ width: 400 }}
+
                         cover={
                           <img
                             alt="example"
@@ -326,7 +325,7 @@ export default class App extends React.Component {
                   <Row>
                     <Col span={9} offset={3}>
                       <Card
-                        style={{ width: 400 }}
+
                         cover={
                           <img
                             alt="example"
@@ -355,7 +354,7 @@ export default class App extends React.Component {
                     </Col>
                     <Col span={9} offset={1}>
                       <Card
-                        style={{ width: 400 }}
+
                         cover={
                           <img
                             alt="example"
@@ -388,7 +387,6 @@ export default class App extends React.Component {
               <Footer>Created By Ahmet Bolat</Footer>
             </Layout>
           </Col>
-          <Col span={4}></Col>
         </Row>
       </>
     );
