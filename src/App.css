@@ -109,7 +109,7 @@ background:#fff !important;
 }
 
 .card-image{
-  height: 300px;
+  height: 100px;
   object-fit: contain;
 }
 
@@ -133,7 +133,6 @@ background:#fff !important;
 }
 
 .dots-button{
- 
   height: 30px;
 }
 
@@ -149,11 +148,13 @@ background:#fff !important;
  background-color: brown;
 }
 
- 
-
 .slick-slide div div {
-display: -webkit-box !important;
-height: 500px;
-background-color:red;
--webkit-box-pack: center;
+  display: -webkit-box !important;
+  height: 500px !important;
+  background-color:red;
+  -webkit-box-pack: center;
+}
+
+.ant-card-cover > * {
+  width: 60% !important;
 }

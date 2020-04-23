@@ -1,28 +1,21 @@
 import React from 'react';
 import { Menu } from 'antd';
-import { AppstoreOutlined, MailOutlined, SettingOutlined } from '@ant-design/icons';
 import 'antd/dist/antd.css';
 
 
 const { SubMenu } = Menu;
 
-
 export default class FHMenu extends React.Component {
 
-    constructor(props: any) {
-        super(props);
-
-    }
     handleClick = (e: any) => {
         console.log('click ', e);
     };
-
 
     render() {
         return (
             <Menu
                 onClick={this.handleClick}
-                style={{ width: 256 }}
+                style={{ minWidth: 180 }}
                 defaultSelectedKeys={['1']}
                 defaultOpenKeys={['sub1']}
                 mode="inline"
