@@ -35,8 +35,8 @@ export default class FHHeader extends React.Component<any, any> {
                             </Popover>
                         </Col>
                     </Row>
-                    <Row style={{ width: "100%" }}>
-                        <Col span={24} style={{ textAlign: "center" }}>
+                    <Row style={{ width: "100%" }} justify={"center"}>
+                        <Col xs={24} sm={24} md={24} lg={20} xl={18} style={{ textAlign: "center" }}>
                             <Menu onClick={this.handleClick} mode="horizontal">
                                 <Menu.Item key="mail">
                                     <HomeOutlined />
@@ -67,14 +67,14 @@ export default class FHHeader extends React.Component<any, any> {
                             </Menu>
                         </Col>
                     </Row>
-                    <Row style={{ width: "100%" }}>
-                        <Col span={24}>
+                    <Row style={{ width: "100%" }} justify={"center"}>
+                        <Col xs={24} sm={24} md={24} lg={20} xl={18}>
                             <Text type="warning">дома/помидоры</Text>
 
                         </Col>
                     </Row>
-                    <Row style={{ width: "100%" }}>
-                        <Col span={24}>
+                    <Row style={{ width: "100%" }} justify={"center"}>
+                        <Col xs={24} sm={24} md={24} lg={20} xl={18}>
                             <Carousel autoplay dots={{ className: "dots-button" }}>
                                 <div>
                                     <img

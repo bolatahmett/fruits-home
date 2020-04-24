@@ -59,14 +59,15 @@ export default class FHContent extends React.Component<any, FHContentState> {
 
         const defaultContent: React.ReactNode = contentCardItems.map((cardItem: any) => {
             return <>
-                <Row>
-                    <Col xs={12} sm={12} md={12} lg={12} xl={12}>
+                <Row justify="center" align="middle">
+                    <Col xs={11} sm={11} md={8} lg={8} xl={6} style={{ margin: "1px" }}>
                         <FHContentCard imageUrl={cardItem[0].ImageUrl} altInfo={cardItem[0].AltInfo} title={cardItem[0].Title} description={cardItem[0].Description} price={cardItem[0].Price} stockStatus={cardItem[0].StockStatus}></FHContentCard>
                     </Col>
-                    <Col xs={12} sm={12} md={12} lg={12} xl={12} style={{ paddingRight: "2px" }}>
+                    <Col xs={11} sm={11} md={8} lg={8} xl={6} style={{ margin: "1px" }} >
                         <FHContentCard imageUrl={cardItem[1].ImageUrl} altInfo={cardItem[1].AltInfo} title={cardItem[1].Title} description={cardItem[1].Description} price={cardItem[1].Price} stockStatus={cardItem[1].StockStatus}></FHContentCard>
                     </Col>
                 </Row>
+                <p></p>
             </>
         })
 

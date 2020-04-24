@@ -159,10 +159,7 @@ background:#fff !important;
   width: 60% !important;
 }
 
-.price {
-  font-size: x-small;
-}
 
-.status {
+.content-card-text {
   font-size: x-small;
 }
