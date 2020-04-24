@@ -60,10 +60,10 @@ export default class FHContent extends React.Component<any, FHContentState> {
         const defaultContent: React.ReactNode = contentCardItems.map((cardItem: any) => {
             return <>
                 <Row>
-                    <Col span={12}>
+                    <Col xs={12} sm={12} md={12} lg={12} xl={12}>
                         <FHContentCard imageUrl={cardItem[0].ImageUrl} altInfo={cardItem[0].AltInfo} title={cardItem[0].Title} description={cardItem[0].Description} price={cardItem[0].Price} stockStatus={cardItem[0].StockStatus}></FHContentCard>
                     </Col>
-                    <Col span={12} style={{ paddingRight: "2px" }}>
+                    <Col xs={12} sm={12} md={12} lg={12} xl={12} style={{ paddingRight: "2px" }}>
                         <FHContentCard imageUrl={cardItem[1].ImageUrl} altInfo={cardItem[1].AltInfo} title={cardItem[1].Title} description={cardItem[1].Description} price={cardItem[1].Price} stockStatus={cardItem[1].StockStatus}></FHContentCard>
                     </Col>
                 </Row>

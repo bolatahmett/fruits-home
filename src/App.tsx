@@ -19,15 +19,15 @@ export default class App extends React.Component<any, any> {
     return (
       <>
         <Row style={{ paddingLeft: "2px", paddingRight: "2px" }}>
-          <Col span={24}>
+          <Col xs={24} sm={24} md={24} lg={24} xl={24}>
             <Layout>
               <Header>
                 <FHHeader />
               </Header>
               <Layout style={{ height: "100%" }}>
-                <Sider>
+                {/* <Sider>
                   <FHMenu></FHMenu>
-                </Sider>
+                </Sider> */}
                 <Content>
                   <FHContent />
                 </Content>

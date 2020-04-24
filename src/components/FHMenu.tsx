@@ -15,7 +15,7 @@ export default class FHMenu extends React.Component {
         return (
             <Menu
                 onClick={this.handleClick}
-                style={{ minWidth: 180 }}
+                style={{ minWidth: 120 }}
                 defaultSelectedKeys={['1']}
                 defaultOpenKeys={['sub1']}
                 mode="inline"

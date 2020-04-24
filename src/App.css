@@ -158,3 +158,11 @@ background:#fff !important;
 .ant-card-cover > * {
   width: 60% !important;
 }
+
+.price {
+  font-size: x-small;
+}
+
+.status {
+  font-size: x-small;
+}
