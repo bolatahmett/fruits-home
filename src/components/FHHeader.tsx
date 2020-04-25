@@ -1,15 +1,14 @@
 import React from "react";
-import { Row, Col, Input, Popover, Menu, Carousel } from "antd";
-import SubMenu from "antd/lib/menu/SubMenu";
-import { PhoneOutlined, HomeOutlined, SettingOutlined, ShoppingCartOutlined } from '@ant-design/icons';
+import { Row, Col, Input, Popover, Carousel, Alert, Badge } from "antd";
+import { PhoneOutlined } from '@ant-design/icons';
 import { Typography } from 'antd';
+import FHHeaderMenu from "./FHHeaderMenu";
+import TextLoop from 'react-text-loop';
+import FHBasket from "./FHBasket";
+
 const { Text } = Typography;
 
-export default class FHHeader extends React.Component<any, any> {
-
-    handleClick = (e: any) => {
-        console.log('click ', e);
-    };
+class FHHeader extends React.Component<any, any> {
 
     render(): React.ReactNode {
         return (
@@ -27,87 +26,31 @@ export default class FHHeader extends React.Component<any, any> {
                             <Input placeholder={"поиск"}></Input>
                         </Col>
                         <Col span={2} offset={1}>
-                            <Popover content={<div>
-                                <p>
-                                    нуль</p>
-                            </div>} title="корзина">
-                                <ShoppingCartOutlined style={{ fontSize: '22px', color: '#08c' }} />
-                            </Popover>
+                            <FHBasket></FHBasket>
                         </Col>
                     </Row>
                     <Row style={{ width: "100%" }} justify={"center"}>
                         <Col xs={24} sm={24} md={24} lg={20} xl={18} style={{ textAlign: "center" }}>
-                            <Menu onClick={this.handleClick} mode="horizontal">
-                                <Menu.Item key="mail">
-                                    <HomeOutlined />
-                                    дома
-                          </Menu.Item>
-                                <SubMenu
-                                    title={
-                                        <span className="submenu-title-wrapper">
-                                            <SettingOutlined />
-                                            фрукты
-                               </span>
-                                    }
-                                >
-                                    <Menu.Item key="setting:1">клубника</Menu.Item>
-                                    <Menu.Item key="setting:2">оранжевый</Menu.Item>
-                                    <Menu.Item key="setting:2">грейпфрут</Menu.Item>
-                                </SubMenu>
-                                <SubMenu
-                                    title={
-                                        <span className="submenu-title-wrapper">
-                                            <SettingOutlined />
-                                            овощной
-                              </span>
-                                    }
-                                >
-                                    <Menu.Item key="setting:1">помидоры</Menu.Item>
-                                </SubMenu>
-                            </Menu>
+                            <FHHeaderMenu></FHHeaderMenu>
                         </Col>
                     </Row>
                     <Row style={{ width: "100%" }} justify={"center"}>
                         <Col xs={24} sm={24} md={24} lg={20} xl={18}>
                             <Text type="warning">дома/помидоры</Text>
-
                         </Col>
                     </Row>
                     <Row style={{ width: "100%" }} justify={"center"}>
                         <Col xs={24} sm={24} md={24} lg={20} xl={18}>
-                            <Carousel autoplay dots={{ className: "dots-button" }}>
-                                <div>
-                                    <img
-                                        alt="example"
-                                        src={require("./../images/header4.jpeg")}
-                                    />
-                                </div>
-
-                                <div style={{ contain: " content" }}>
-                                    <img
-                                        alt="example"
-                                        src={require("./../images/domates.jpeg")}
-
-                                    />
-                                </div>
-
-                                <div style={{ contain: " content" }}>
-                                    <img
-                                        alt="example"
-                                        src={require("./../images/header3.jpeg")}
-                                    />
-                                </div>
-
-                                <div style={{ contain: " content" }}>
-                                    <img
-                                        alt="example"
-                                        src={require("./../images/header.jpeg")}
-
-                                    />
-                                </div>
-
-                            </Carousel>
-
+                            <Alert
+                                banner
+                                message={
+                                    <TextLoop mask>
+                                        <div>Помидор продается</div>
+                                        <div>Рекомендуется брать клубнику</div>
+                                        <div>Грейпфрут Та скидка</div>
+                                    </TextLoop>
+                                }
+                            />
                         </Col>
                     </Row>
                 </Row>
@@ -115,3 +58,5 @@ export default class FHHeader extends React.Component<any, any> {
             </>);
     }
 }
+
+export default FHHeader;

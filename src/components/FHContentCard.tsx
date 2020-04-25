@@ -1,9 +1,14 @@
 import React from 'react'
-import { Card } from 'antd'
+import { Card, Button, message } from 'antd'
 import Meta from 'antd/lib/card/Meta'
 import { InfoCircleOutlined } from '@ant-design/icons';
 import { Typography } from 'antd';
 import FHShopPopup from './FHShopPopup';
+import { addTodo, openDrawer, addToBasket } from './../redux/actions/actions';
+import { connect } from 'react-redux';
+import {
+    Link
+} from "react-router-dom";
 
 const { Text } = Typography;
 
@@ -14,24 +19,52 @@ interface FHContentCardProps {
     description: string;
     price: string;
     stockStatus: string;
+    addTodo: any;
+    openDrawer: any;
+    addToBasket: any;
+    productType: string;
+    productCode: string;
 }
 
 interface FHContentCardState {
     popupVisible: boolean;
+    productQuantity: number;
 }
 
-export default class FHContentCard extends React.Component<FHContentCardProps, FHContentCardState> {
+class FHContentCard extends React.Component<FHContentCardProps, FHContentCardState> {
 
     constructor(props: any) {
         super(props);
-        this.state = { popupVisible: true };
+        this.state = { popupVisible: false, productQuantity: 1 };
 
         this.handleAddBasket = this.handleAddBasket.bind(this);
+        this.showDetail = this.showDetail.bind(this);
+        this.increaseQuantity = this.increaseQuantity.bind(this);
+        this.decreaseQuantity = this.decreaseQuantity.bind(this);
     }
 
     handleAddBasket(): void {
+        this.props.addToBasket({ productCode: this.props.productCode, quantity: this.state.productQuantity });
+        message.success(this.state.productQuantity + ' килограмм ' + this.props.productCode + ' Добавлено в корзину');
+    }
+
+    showDetail(): void {
+        // dispatches actions to add todo
+        this.props.openDrawer(true);
+    }
+
+    decreaseQuantity(): void {
+        if (this.state.productQuantity === 0) return;
         this.setState({
-            popupVisible: true
+            productQuantity: this.state.productQuantity - 1,
+            popupVisible: false
+        });
+    }
+
+    increaseQuantity(): void {
+        this.setState({
+            productQuantity: this.state.productQuantity + 1,
+            popupVisible: false
         });
     }
 
@@ -50,13 +83,13 @@ export default class FHContentCard extends React.Component<FHContentCardProps, F
                         />
                     }
                     actions={[
-                        <>
-                            <InfoCircleOutlined key="info" />
-                            <br></br>
-                            <Text type={"warning"} className={"content-card-text"}>
-                                подробно</Text>
-                        </>
-                        ,
+                        // <>
+                        //     <Link to={`/detail-page/${this.props.productType}/${this.props.productCode}`}> <InfoCircleOutlined key="info" /> </Link>
+                        //     {/* <InfoCircleOutlined key="info" onClick={this.showDetail} /> */}
+                        //     <br></br>
+                        //     {/* Detay */}
+                        //     <Text type={"warning"} className={"content-card-text"}>подробно </Text>
+                        // </>,
                         <>
                             <img onClick={this.handleAddBasket} src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABmJLR0QA/wD/AP+gvaeTAAABJ0lEQVRIidXUzypEcRjG8Y8RUSw0F0BK2Sq5BjPKym1YTpZjiWtQNtzBLC3s3cBkpRkLyRJDYSzOK6dxZuYMh/jW26n39/ye5/evwx+jG5WbUnxfU5OPCl4UeE4FPKDcRzdsB8uYHhTUCIPaFwIm0EQ7gjKphsElxkcM2I6xZoRlMoaLEFajt5My7q16aGZxHb3Nfubv1ELYSPWyQuqp8f3onQ0zhznc4wWLfULS5gvoSF7iap4AkqfaxUFPfzcqzUloj/Oaw0pMusXUAN2aZOUdzI8SAOf6X25v7Y1qXsZNDuOO5IgG7TKTwzA4lTzdQpnBI56wVLQ5TOJO/vNPV2625LuDLwf8OBu4kvwZKwXoPtH2se3Wd3SlrOZvUJGsroX1AnT/mDcWLISsf1YYZAAAAABJRU5ErkJggg==" />
                             <br></br>
@@ -73,6 +106,11 @@ export default class FHContentCard extends React.Component<FHContentCardProps, F
                     <div className="additional">
                         <p className={"content-card-text"}><Text code>цена:</Text> <span className="quantity">{this.props.price}</span></p>
                         <p className={"content-card-text"}><Text code>Состояние на складе:</Text> <span className="quantity">{this.props.stockStatus}</span></p>
+                        <p style={{ textAlign: "center" }}>
+                            <Button type="ghost" shape="circle" onClick={this.decreaseQuantity}>-</Button>
+                            <Text> {this.state.productQuantity} килограмм </Text>
+                            <Button type="ghost" shape="circle" onClick={this.increaseQuantity}>+</Button>
+                        </p>
                     </div>
                 </Card>
                 <FHShopPopup visible={this.state.popupVisible} />
@@ -80,3 +118,12 @@ export default class FHContentCard extends React.Component<FHContentCardProps, F
         )
     }
 }
+
+export default connect(
+    null,
+    {
+        addTodo,
+        openDrawer,
+        addToBasket
+    }
+)(FHContentCard)
