@@ -20,7 +20,7 @@ class FHHeader extends React.Component<any, any> {
                             +7 925 353-03-43
                       </Col>
                         <Col span={8} style={{ textAlign: "center" }}>
-                            <h1 className={"header-text"}> FRUITS HOME</h1>
+                            <p className={"header-text"}> FRUITS HOME</p>
                         </Col>
                         <Col span={5} style={{ textAlign: "center" }}>
                             <Input placeholder={"поиск"}></Input>

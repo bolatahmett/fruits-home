@@ -1,6 +1,6 @@
 import React from 'react'
 import { connect } from 'react-redux';
-import { List, Avatar, Button, Row, Col, Steps, Result } from 'antd';
+import { List, Avatar, Button, Row, Col, Steps, Result, Divider } from 'antd';
 import { UserOutlined, SolutionOutlined, LoadingOutlined, SmileOutlined } from '@ant-design/icons';
 import { Product } from '../Model/Product';
 import { Typography } from 'antd';
@@ -37,6 +37,7 @@ class BasketResult extends React.Component<any, any> {
         }}> Ваша корзина пуста</p> </>;
         if (this.props.basket.length > 0) {
             content = <List
+                bordered={true}
                 itemLayout="horizontal"
                 dataSource={this.props.basket}
                 renderItem={(product: Product) => (
@@ -56,7 +57,7 @@ class BasketResult extends React.Component<any, any> {
         return (
             <>
                 <Row justify={"center"}>
-                    <Col xs={24} sm={24} md={12} lg={12} xl={12}>
+                    <Col xs={22} sm={22} md={12} lg={12} xl={12}>
                         <Steps current={this.state.current} size="small" labelPlacement={"vertical"}>
                             <Step title="Просмотр корзины" />
                             <Step title="оплата" />
@@ -64,6 +65,7 @@ class BasketResult extends React.Component<any, any> {
                         </Steps>
                     </Col>
                 </Row>
+                <Divider></Divider>
                 <Row justify="center" align="middle">
                     <Col xs={11} sm={11} md={8} lg={8} xl={6}>
 
@@ -101,12 +103,13 @@ class BasketResult extends React.Component<any, any> {
                     </Col>
 
                 </Row>
+                <Divider></Divider>
                 <Row justify="center" align={"middle"}>
-                    <Col xs={11} sm={11} md={8} lg={8} xl={6} style={{ margin: "1px" }}>
+                    <Col xs={11} sm={11} md={8} lg={8} xl={6}>
                         <Button type={"default"} shape="round" size={"large"} onClick={this.decreaseCurrent} disabled={this.state.current === 0}> назад  </Button>
 
                     </Col>
-                    <Col xs={11} sm={11} md={8} lg={8} xl={6} style={{ margin: "1px", textAlignLast: "right" }}>
+                    <Col xs={11} sm={11} md={8} lg={8} xl={6} style={{ textAlignLast: "right" }}>
                         <Button type={"default"} shape="round" size={"large"} onClick={this.increaseCurrent} disabled={this.state.current === 3}> вперед </Button>
                     </Col>
                 </Row>
