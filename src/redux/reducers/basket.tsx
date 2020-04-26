@@ -1,12 +1,15 @@
-const basket = (state = [], action: { type: any; productCode: any, quantity: any }) => {
+import { Product } from "../../Model/Product";
+
+const basket = (state = [], action: { type: any; product: Product }) => {
     switch (action.type) {
         case 'ADD_TO_BASKET':
+
+            debugger;
+
+
             return [
                 ...state,
-                {
-                    productCode: action.productCode,
-                    quantity: action.quantity
-                }
+                action.product
             ];
         default:
             return state

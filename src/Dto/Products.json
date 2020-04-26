@@ -1,0 +1,106 @@
+[
+    [
+        {
+            "ImageUrl": "tomatoes.jpeg",
+            "AltInfo": "tomatoes",
+            "Title": "помидоры",
+            "Description": "подробное объяснение",
+            "Price": "20рубль",
+            "StockStatus": "В наличии",
+            "ProductType": "vegetable",
+            "ProductCode": "tomatoes"
+        },
+        {
+            "ImageUrl": "orange.jpg",
+            "AltInfo": "example",
+            "Title": "оранжевый",
+            "Description": "подробное объяснение",
+            "Price": "20рубль",
+            "StockStatus": "В наличии",
+            "ProductType": "fruit",
+            "ProductCode": "orange"
+        },
+        {
+            "ImageUrl": "potato.jpg",
+            "AltInfo": "potato",
+            "Title": "картофель",
+            "Description": "подробное объяснение",
+            "Price": "26рубль",
+            "StockStatus": "В наличии",
+            "ProductType": "fruit",
+            "ProductCode": "potato"
+        },
+        {
+            "ImageUrl": "onion.jpg",
+            "AltInfo": "onion",
+            "Title": "лук",
+            "Description": "подробное объяснение",
+            "Price": "26рубль",
+            "StockStatus": "В наличии",
+            "ProductType": "fruit",
+            "ProductCode": "onion"
+        },
+        {
+            "ImageUrl": "garlic.jpg",
+            "AltInfo": "garlic",
+            "Title": "чеснок",
+            "Description": "подробное объяснение",
+            "Price": "26рубль",
+            "StockStatus": "В наличии",
+            "ProductType": "fruit",
+            "ProductCode": "garlic"
+        }
+    ],
+    [
+        {
+            "ImageUrl": "grapefruit.jpg",
+            "AltInfo": "example",
+            "Title": "помидоры",
+            "Description": "подробное объяснение",
+            "Price": "20рубль",
+            "StockStatus": "В наличии",
+            "ProductType": "fruit",
+            "ProductCode": "grapefruit"
+        },
+        {
+            "ImageUrl": "strawberry.jpg",
+            "AltInfo": "example",
+            "Title": "оранжевый",
+            "Description": "подробное объяснение",
+            "Price": "20рубль",
+            "StockStatus": "В наличии",
+            "ProductType": "fruit",
+            "ProductCode": "strawberry"
+        },
+        {
+            "ImageUrl": "pepper.jpg",
+            "AltInfo": "pepper",
+            "Title": "перец",
+            "Description": "подробное объяснение",
+            "Price": "26рубль",
+            "StockStatus": "В наличии",
+            "ProductType": "fruit",
+            "ProductCode": "pepper"
+        },
+        {
+            "ImageUrl": "cucumber.jpeg",
+            "AltInfo": "cucumber",
+            "Title": "огурец",
+            "Description": "подробное объяснение",
+            "Price": "26рубль",
+            "StockStatus": "В наличии",
+            "ProductType": "fruit",
+            "ProductCode": "cucumber"
+        },
+        {
+            "ImageUrl": "eggplant.jpg",
+            "AltInfo": "eggplant",
+            "Title": "баклажан",
+            "Description": "подробное объяснение",
+            "Price": "26рубль",
+            "StockStatus": "В наличии",
+            "ProductType": "fruit",
+            "ProductCode": "eggplant"
+        }
+    ]
+]

@@ -16,6 +16,7 @@ import {
   Link,
   useRouteMatch
 } from "react-router-dom";
+import BasketResult from './pages/BasketResult';
 
 const { Header, Footer, Sider, Content } = Layout;
 
@@ -35,6 +36,7 @@ export default class App extends React.Component<any, any> {
                 <Layout style={{ height: "100%" }}>
                   <Content>
                     <Route exact path="/" component={Home} />
+                    <Route exact path="/basket-result" component={BasketResult} />
                     <Route path="/detail-page/fruits/strawberry" component={() => <DetailPage typeOfContent={"fruits"} typeOfSubContent={"strawberry"} />} />
                     <Route path="/detail-page/fruits/orange" component={() => <DetailPage typeOfContent={"fruits"} typeOfSubContent={"orange"} />} />
                     <Route path="/detail-page/fruits/grapefruit" component={() => <DetailPage typeOfContent={"fruits"} typeOfSubContent={"grapefruit"} />} />

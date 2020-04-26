@@ -6,9 +6,8 @@ import { Typography } from 'antd';
 import FHShopPopup from './FHShopPopup';
 import { addTodo, openDrawer, addToBasket } from './../redux/actions/actions';
 import { connect } from 'react-redux';
-import {
-    Link
-} from "react-router-dom";
+
+import { Product } from '../Model/Product';
 
 const { Text } = Typography;
 
@@ -44,7 +43,12 @@ class FHContentCard extends React.Component<FHContentCardProps, FHContentCardSta
     }
 
     handleAddBasket(): void {
-        this.props.addToBasket({ productCode: this.props.productCode, quantity: this.state.productQuantity });
+        this.props.addToBasket({
+            ProductCode: this.props.productCode,
+            ProductType: this.props.productType,
+            Quantity: this.state.productQuantity,
+            ImageUrl: this.props.imageUrl
+        } as Product);
         message.success(this.state.productQuantity + ' килограмм ' + this.props.productCode + ' Добавлено в корзину');
     }
 
@@ -108,7 +112,7 @@ class FHContentCard extends React.Component<FHContentCardProps, FHContentCardSta
                         <p className={"content-card-text"}><Text code>Состояние на складе:</Text> <span className="quantity">{this.props.stockStatus}</span></p>
                         <p style={{ textAlign: "center" }}>
                             <Button type="ghost" shape="circle" onClick={this.decreaseQuantity}>-</Button>
-                            <Text> {this.state.productQuantity} килограмм </Text>
+                            <Text> {this.state.productQuantity} кг </Text>
                             <Button type="ghost" shape="circle" onClick={this.increaseQuantity}>+</Button>
                         </p>
                     </div>

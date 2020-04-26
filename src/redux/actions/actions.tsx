@@ -1,3 +1,4 @@
+import { Product } from "../../Model/Product"
 
 
 export const addTodo = (todo: any) => ({
@@ -10,8 +11,7 @@ export const openDrawer = (visible: any) => ({
     visible: visible
 })
 
-export const addToBasket = (product: any) => ({
+export const addToBasket = (product: Product) => ({
     type: 'ADD_TO_BASKET',
-    productCode: product.productCode,
-    quantity: product.quantity
+    product: product
 })
