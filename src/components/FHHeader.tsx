@@ -28,7 +28,7 @@ class FHHeader extends React.Component<any, any> {
                                 this.setState({ searchVisible: !this.state.searchVisible })
                             }} />
                         </Col>
-                        <Col xs={14} sm={13} md={13} lg={14} xl={14} style={{ textAlign: "center" }} >
+                        <Col xs={15} sm={13} md={13} lg={14} xl={14} style={{ textAlign: "center" }} >
                             <Link to={"/"}>
                                 <h1 className={"header-text"}> FRUITS HOME</h1>
                             </Link>
