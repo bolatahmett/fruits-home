@@ -49,6 +49,26 @@
             "StockStatus": "В наличии",
             "ProductType": "fruit",
             "ProductCode": "garlic"
+        },
+        {
+            "ImageUrl": "leek.jpg",
+            "AltInfo": "leek",
+            "Title": "лук-порей",
+            "Description": "подробное объяснение",
+            "Price": "20рубль",
+            "StockStatus": "В наличии",
+            "ProductType": "vegetable",
+            "ProductCode": "leek"
+        },
+        {
+            "ImageUrl": "carrot.jpg",
+            "AltInfo": "carrot",
+            "Title": "морковь",
+            "Description": "подробное объяснение",
+            "Price": "20рубль",
+            "StockStatus": "В наличии",
+            "ProductType": "vegetable",
+            "ProductCode": "carrot"
         }
     ],
     [
@@ -101,6 +121,26 @@
             "StockStatus": "В наличии",
             "ProductType": "fruit",
             "ProductCode": "eggplant"
+        },
+        {
+            "ImageUrl": "cabbage.jpg",
+            "AltInfo": "cabbage",
+            "Title": "капуста",
+            "Description": "подробное объяснение",
+            "Price": "20рубль",
+            "StockStatus": "В наличии",
+            "ProductType": "vegetable",
+            "ProductCode": "cabbage"
+        },
+        {
+            "ImageUrl": "spinach.jpg",
+            "AltInfo": "spinach",
+            "Title": "шпинат",
+            "Description": "подробное объяснение",
+            "Price": "20рубль",
+            "StockStatus": "В наличии",
+            "ProductType": "vegetable",
+            "ProductCode": "spinach"
         }
     ]
 ]

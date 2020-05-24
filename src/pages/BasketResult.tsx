@@ -1,10 +1,10 @@
 import React from 'react'
 import { connect } from 'react-redux';
 import { List, Avatar, Button, Row, Col, Steps, Result, Divider } from 'antd';
-import { UserOutlined, SolutionOutlined, LoadingOutlined, SmileOutlined } from '@ant-design/icons';
 import { Product } from '../Model/Product';
 import { Typography } from 'antd';
-import ButtonGroup from 'antd/lib/button/button-group';
+import { addToBasket } from './../redux/actions/actions';
+import ExtractOfAccount from '../components/ExtractOfAccount';
 const { Text } = Typography;
 const { Step } = Steps;
 
@@ -16,18 +16,45 @@ class BasketResult extends React.Component<any, any> {
 
         this.decreaseCurrent = this.decreaseCurrent.bind(this);
         this.increaseCurrent = this.increaseCurrent.bind(this);
+        this.increaseProductQuantity = this.increaseProductQuantity.bind(this);
+        this.decreaseProductQuantity = this.decreaseProductQuantity.bind(this);
     }
 
     decreaseCurrent() {
         this.setState({
             current: this.state.current - 1
-        })
+        });
     }
 
     increaseCurrent() {
-        this.setState({
-            current: this.state.current + 1
-        })
+        debugger;
+        if (this.props.user.Name) {
+            this.setState({
+                current: this.state.current + 1
+            })
+        } else {
+            // history.pushState(null, '/login')
+        }
+    }
+
+    increaseProductQuantity(product: Product) {
+        this.props.addToBasket({
+            ProductCode: product.ProductCode,
+            ProductType: product.ProductType,
+            Quantity: 1,
+            ImageUrl: product.ImageUrl
+        } as Product);
+    }
+
+    decreaseProductQuantity(product: Product) {
+        if (this.props.basket.length > 0) {
+            this.props.addToBasket({
+                ProductCode: product.ProductCode,
+                ProductType: product.ProductType,
+                Quantity: -1,
+                ImageUrl: product.ImageUrl
+            } as Product);
+        }
     }
 
     render() {
@@ -41,7 +68,12 @@ class BasketResult extends React.Component<any, any> {
                 itemLayout="horizontal"
                 dataSource={this.props.basket}
                 renderItem={(product: Product) => (
-                    <List.Item>
+                    <List.Item
+                        actions={[
+                            <Button type="ghost" shape="circle" onClick={() => this.decreaseProductQuantity(product)}>-</Button>,
+                            <Button type="ghost" shape="circle" onClick={() => this.increaseProductQuantity(product)}>+</Button>
+                        ]}>
+
                         <List.Item.Meta
                             avatar={<Avatar src={require(`./../images/${product.ImageUrl}`)} />}
                             title={product.ProductCode}
@@ -67,13 +99,12 @@ class BasketResult extends React.Component<any, any> {
                 </Row>
                 <Divider></Divider>
                 <Row justify="center" align="middle">
-                    <Col xs={11} sm={11} md={8} lg={8} xl={6}>
-
+                    <Col xs={24} sm={24} md={12} lg={12} xl={12}>
 
                         {
                             this.state.current === 1 && <>
                                 {content}
-                                {this.props.basket.length > 0 && <p> <Text code> Общая сумма </Text> <span>{totalQuantity} ruble</span></p>}
+                                <ExtractOfAccount></ExtractOfAccount>
                             </>
                         }
 
@@ -99,9 +130,7 @@ class BasketResult extends React.Component<any, any> {
                                 />
                             </>
                         }
-
                     </Col>
-
                 </Row>
                 <Divider></Divider>
                 <Row justify="center" align={"middle"}>
@@ -119,9 +148,11 @@ class BasketResult extends React.Component<any, any> {
 }
 
 const mapStateToProps = (state: any) => {
-    debugger;
     const basket = state.basket;
-    return { basket };
+    const user = state.user;
+    return { basket, user };
 };
 
-export default connect(mapStateToProps)(BasketResult);
+export default connect(mapStateToProps, {
+    addToBasket
+})(BasketResult);

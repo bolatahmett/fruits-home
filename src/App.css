@@ -105,7 +105,7 @@ background:#fff !important;
                0 5px 10px rgba(0,0,0,.25),
                0 10px 10px rgba(0,0,0,.2),
                0 20px 20px rgba(0,0,0,.15);
-               text-align: center;
+             
 }
 
 .card-image{
@@ -162,4 +162,24 @@ background:#fff !important;
 
 .content-card-text {
   font-size: x-small;
+}
+
+.ant-card-meta-avatar{
+  width: 100%;
+}
+
+.ant-btn-link.login{
+  color: black !important;
+}
+.login-form {
+  max-width: 300px;
+}
+.login-form-forgot {
+  float: right;
+}
+.ant-col-rtl .login-form-forgot {
+  float: left;
+}
+.login-form-button {
+  width: 100%;
 }

@@ -1,6 +1,5 @@
 import React from 'react'
 import { Row, Col } from 'antd';
-import FHContentCard from '../components/FHContentCard';
 
 interface DetailPageProps {
     typeOfContent: string;

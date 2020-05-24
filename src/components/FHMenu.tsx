@@ -19,6 +19,8 @@ export default class FHMenu extends React.Component {
                 defaultSelectedKeys={['1']}
                 defaultOpenKeys={['sub1']}
                 mode="inline"
+                inlineCollapsed={false}
+
             >
                 <Menu.ItemGroup key="products" title={
                     <span>

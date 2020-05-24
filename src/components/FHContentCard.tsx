@@ -1,7 +1,6 @@
 import React from 'react'
-import { Card, Button, message } from 'antd'
-import Meta from 'antd/lib/card/Meta'
-import { InfoCircleOutlined } from '@ant-design/icons';
+import { Card, Button, message, Row, Col } from 'antd'
+import Meta from 'antd/lib/card/Meta';
 import { Typography } from 'antd';
 import FHShopPopup from './FHShopPopup';
 import { addTodo, openDrawer, addToBasket } from './../redux/actions/actions';
@@ -79,13 +78,7 @@ class FHContentCard extends React.Component<FHContentCardProps, FHContentCardSta
         return (
             <>
                 <Card
-                    cover={
-                        <img
-                            alt={this.props.altInfo}
-                            src={require(`./../images/${this.props.imageUrl}`)}
-                            className={"card-image"}
-                        />
-                    }
+
                     actions={[
                         // <>
                         //     <Link to={`/detail-page/${this.props.productType}/${this.props.productCode}`}> <InfoCircleOutlined key="info" /> </Link>
@@ -100,23 +93,45 @@ class FHContentCard extends React.Component<FHContentCardProps, FHContentCardSta
                             <Text type={"warning"} className={"content-card-text"}>Добавить в корзину</Text>
                         </>
                     ]}
+
+
                 >
-                    <Meta
-                        title={this.props.title}
-                        description={this.props.description}
-                    />
-                    <p></p>
-                    <p></p>
-                    <div className="additional">
-                        <p className={"content-card-text"}><Text code>цена:</Text> <span className="quantity">{this.props.price}</span></p>
-                        <p className={"content-card-text"}><Text code>Состояние на складе:</Text> <span className="quantity">{this.props.stockStatus}</span></p>
-                        <p style={{ textAlign: "center" }}>
-                            <Button type="ghost" shape="circle" onClick={this.decreaseQuantity}>-</Button>
-                            <Text> {this.state.productQuantity} кг </Text>
-                            <Button type="ghost" shape="circle" onClick={this.increaseQuantity}>+</Button>
-                        </p>
-                    </div>
+
+                    <Row>
+                        <Col span={12}>
+                            <Meta style={{ width: "100%", textAlign: "center" }}
+                                avatar={
+                                    <img
+                                        alt={this.props.altInfo}
+                                        src={require(`./../images/${this.props.imageUrl}`)}
+                                        className={"card-image"}
+                                    />
+                                }
+                            />
+                        </Col>
+                        <Col span={12}>
+                            <Meta
+                                title={this.props.title}
+                                description={this.props.description}
+                            />
+                            <p></p>
+                            <p></p>
+                            <div className="additional">
+                                <p className={"content-card-text"}><Text code>цена:</Text> <span className="quantity">{this.props.price}</span></p>
+                                <p className={"content-card-text"}><Text code>Состояние на складе:</Text> <span className="quantity">{this.props.stockStatus}</span></p>
+                                <p style={{ textAlign: "center" }}>
+                                    <Button type="ghost" shape="circle" onClick={this.decreaseQuantity}>-</Button>
+                                    <Text> {this.state.productQuantity} кг </Text>
+                                    <Button type="ghost" shape="circle" onClick={this.increaseQuantity}>+</Button>
+                                </p>
+                            </div>
+                        </Col>
+                    </Row>
+
                 </Card>
+
+
+
                 <FHShopPopup visible={this.state.popupVisible} />
             </>
         )

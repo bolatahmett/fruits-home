@@ -1,12 +1,14 @@
 import React from 'react'
-import { Popover, Badge, List, Avatar, Button, Descriptions, Table } from 'antd'
+import { Popover, Badge, List, Avatar, Button } from 'antd'
 import { ShoppingCartOutlined } from '@ant-design/icons';
 import { connect } from 'react-redux';
 import { Product } from '../Model/Product';
+
 import {
     Link
 } from "react-router-dom";
 import { Typography } from 'antd';
+import ExtractOfAccount from './ExtractOfAccount';
 const { Text } = Typography;
 
 class FHBasket extends React.Component<any, any> {
@@ -40,16 +42,16 @@ class FHBasket extends React.Component<any, any> {
                         <br></br>
                         <br></br>
                         <br></br>
-                        {this.props.basket.length > 0 && <p> <Text code> Общая сумма </Text> <span>{totalQuantity} ruble</span></p>}
+                        <ExtractOfAccount></ExtractOfAccount>
                         <Link to={`/basket-result`}>
-                            <Button disabled={buttonDisabled} style={{ borderRadius: "8px", backgroundColor: "antiquewhite", fontSize: "x-small" }}>Завершить действие</Button>
+                            <Button disabled={buttonDisabled} style={{ border: "2px", borderRadius: "8px", backgroundColor: "antiquewhite", fontSize: "x-small" }}>Завершить действие</Button>
                         </Link>
 
                     </>
                 }
                 title="корзина">
                 <Badge count={this.props.basket.length}>
-                    <ShoppingCartOutlined style={{ fontSize: '22px', color: '#08c' }} />
+                    <Button shape="circle" icon={<ShoppingCartOutlined />} />
                 </Badge>
             </Popover>
         )
@@ -57,7 +59,6 @@ class FHBasket extends React.Component<any, any> {
 }
 
 const mapStateToProps = (state: any) => {
-    debugger;
     const basket = state.basket;
     return { basket };
 };
