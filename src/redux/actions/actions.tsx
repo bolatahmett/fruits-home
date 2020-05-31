@@ -29,3 +29,8 @@ export const exitUser = () => ({
         Name: "",
     } as unknown as User
 })
+
+export const handlePopup = (visible: boolean) => ({
+    type: 'OK',
+    handleOk: visible
+})

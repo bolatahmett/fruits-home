@@ -1,5 +1,5 @@
 import React from 'react'
-import { Form, Input, Button, Checkbox, Modal, message, Radio } from 'antd';
+import { Form, Input, Button, Checkbox, message } from 'antd';
 import { UserOutlined, LockOutlined } from '@ant-design/icons';
 import { connect } from 'react-redux';
 import { loginUser } from './../redux/actions/actions';
@@ -10,11 +10,19 @@ function Login(props: any) {
 
     let history = useHistory();
     const onFinish = (values: any) => {
-        if (values.password == "123" && values.username == "ahmet") {
-            debugger;
+        if (values.password === "123" && values.username === "ahmet") {
             props.loginUser({
                 Id: "1",
                 Name: values.username,
+            } as unknown as User);
+            history.push("/");
+
+            message.success("Giriş doğrulandı.");
+        } else if (values.password === "onur" && values.username === "onur") {
+            props.loginUser({
+                Id: "2",
+                Name: values.username,
+                IsAdmin: true
             } as unknown as User);
             history.push("/");
 

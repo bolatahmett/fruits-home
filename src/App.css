@@ -183,3 +183,11 @@ background:#fff !important;
 .login-form-button {
   width: 100%;
 }
+
+.ant-list-header {
+    text-align: right;
+}
+
+.ant-list-footer{
+    text-align: right;
+}
