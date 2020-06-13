@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import PropTypes from 'prop-types'
 import { Row, Col, Input, Form, Select, TreeSelect, Cascader, DatePicker, InputNumber, Switch, Button } from 'antd';
-import { ContentCard } from '../Model/ContentCard';
+import { ContentCard } from '../model/ContentCard';
 import TextArea from 'antd/lib/input/TextArea';
 import { connect } from 'react-redux';
 

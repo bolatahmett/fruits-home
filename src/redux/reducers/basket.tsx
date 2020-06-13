@@ -1,4 +1,4 @@
-import { Product } from "../../Model/Product";
+import { Product } from "../../model/Product";
 import { AnyAction } from "redux";
 //{ type: any; product: Product }
 const basket = (state = [] as Product[], action: AnyAction) => {

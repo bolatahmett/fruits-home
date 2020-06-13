@@ -2,7 +2,7 @@ import React from 'react'
 import { Popover, Badge, List, Avatar, Button } from 'antd'
 import { ShoppingCartOutlined } from '@ant-design/icons';
 import { connect } from 'react-redux';
-import { Product } from '../Model/Product';
+import { Product } from '../model/Product';
 
 import {
     Link

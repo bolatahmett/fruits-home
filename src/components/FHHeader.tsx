@@ -11,7 +11,7 @@ import Search from "antd/lib/input/Search";
 import { Link } from "react-router-dom";
 import FHMenu from "./FHMenu";
 import { connect } from "react-redux";
-import { User } from "../Model/User";
+import { User } from "../model/User";
 
 const { Text } = Typography;
 

@@ -6,7 +6,7 @@ import {
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { exitUser } from './../redux/actions/actions';
-import { User } from '../Model/User';
+import { User } from '../model/User';
 
 function HeaderLoginButton(props: any) {
 

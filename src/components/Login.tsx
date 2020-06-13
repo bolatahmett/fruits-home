@@ -3,7 +3,7 @@ import { Form, Input, Button, Checkbox, message } from 'antd';
 import { UserOutlined, LockOutlined } from '@ant-design/icons';
 import { connect } from 'react-redux';
 import { loginUser } from './../redux/actions/actions';
-import { User } from '../Model/User';
+import { User } from '../model/User';
 import { useHistory } from 'react-router-dom'
 
 function Login(props: any) {

@@ -6,7 +6,7 @@ import FHPopup from './FHPopup';
 import { addTodo, openDrawer, addToBasket } from './../redux/actions/actions';
 import { connect } from 'react-redux';
 
-import { Product } from '../Model/Product';
+import { Product } from '../model/Product';
 
 const { Text } = Typography;
 

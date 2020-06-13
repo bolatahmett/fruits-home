@@ -1,13 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import { connect } from 'react-redux';
 import { List, Avatar, Row, Col, Button, message } from 'antd';
-import { ContentCard } from '../Model/ContentCard';
+import { ContentCard } from '../model/ContentCard';
 import FHPopup from '../components/FHPopup';
 import FHEditContent from '../components/FHEditContent';
 import { handlePopup } from './../redux/actions/actions';
 import { PlusOutlined } from '@ant-design/icons';
 import * as fs from 'fs';
-import { addItem, getAllItems, removeItem, getItem } from '../Dto/ServerHelper';
+import { addItem, getAllItems, removeItem, getItem } from '../dto/ServerHelper';
 
 export const EditContent = (props: any) => {
 

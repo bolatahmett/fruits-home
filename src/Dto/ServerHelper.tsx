@@ -1,4 +1,4 @@
-import { Product } from "../Model/Product";
+import { Product } from "../model/Product";
 import axios from 'axios';
 
 export async function addItem(product: any): Promise<any> {

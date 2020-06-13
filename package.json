@@ -46,5 +46,12 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "jest": {
+    "setupFiles": [
+      "jest-canvas-mock",
+      "<rootDir>test-setup.ts",
+      "<rootDir>/__mocks__/matchMediaMock.js"
+    ]
   }
 }

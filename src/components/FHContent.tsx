@@ -4,9 +4,9 @@ import FHContentCard from './FHContentCard';
 import { connect } from 'react-redux';
 import DetailPage from '../pages/DetailPage';
 import FHDrawer from './FHDrawer';
-import { ContentCard } from '../Model/ContentCard';
-import Products from './../Dto/Products.json';
-import { getAllItems } from '../Dto/ServerHelper';
+import { ContentCard } from '../model/ContentCard';
+import Products from './../dto/Products.json';
+import { getAllItems } from '../dto/ServerHelper';
 
 function FHContent(props: any) {
 
@@ -25,7 +25,7 @@ function FHContent(props: any) {
     };
 
     const ContentCardItems: ContentCard[] = productItems as unknown as ContentCard[];
-    const defaultContent: React.ReactNode = ContentCardItems.map((item: any, index: number) => {
+    const defaultContent: React.ReactNode = ContentCardItems && ContentCardItems.length > 0 && ContentCardItems.map((item: any, index: number) => {
         if (index % 2 !== 0)
             return;
         let cardItemL = ContentCardItems[index]

@@ -1,7 +1,7 @@
 import React from 'react'
 import { connect } from 'react-redux';
 import { List, Avatar, Button, Row, Col, Steps, Result, Divider } from 'antd';
-import { Product } from '../Model/Product';
+import { Product } from '../model/Product';
 import { Typography } from 'antd';
 import { addToBasket } from './../redux/actions/actions';
 import ExtractOfAccount from '../components/ExtractOfAccount';

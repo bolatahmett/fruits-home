@@ -1,4 +1,4 @@
-import { User } from "../../Model/User";
+import { User } from "../../model/User";
 
 const user = (state = {} as User, action: { type: any; user: User }) => {
     switch (action.type) {

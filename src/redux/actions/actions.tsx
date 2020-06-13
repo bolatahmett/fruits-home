@@ -1,5 +1,5 @@
-import { Product } from "../../Model/Product"
-import { User } from "../../Model/User"
+import { Product } from "../../model/Product"
+import { User } from "../../model/User"
 
 
 export const addTodo = (todo: any) => ({
