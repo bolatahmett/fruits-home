@@ -6,7 +6,6 @@ import FHPopup from '../components/FHPopup';
 import FHEditContent from '../components/FHEditContent';
 import { handlePopup } from './../redux/actions/actions';
 import { PlusOutlined } from '@ant-design/icons';
-import * as fs from 'fs';
 import { addItem, getAllItems, removeItem, getItem } from '../dto/ServerHelper';
 
 export const EditContent = (props: any) => {
@@ -17,12 +16,10 @@ export const EditContent = (props: any) => {
     const [productItemsCount, setProductItemsCount] = useState(0);
 
     useEffect(() => {
-        if (productItems.length === 0) {
-            debugger;
+        if (productItems && productItems.length === 0) {
             getProductItems();
         }
-
-    }, []);
+    }, [productItems]);
 
     const getProductItems = async () => {
         const result = await getAllItems() as ContentCard[];
@@ -89,7 +86,6 @@ export const EditContent = (props: any) => {
     }
 
     const saveChangesToDBOneItem = async (element: ContentCard) => {
-        debugger;
         const jsonQUERY = { ProductCode: element.ProductCode };
         const orjItem = await getItem(jsonQUERY);
         if (orjItem !== "") {
@@ -123,15 +119,15 @@ export const EditContent = (props: any) => {
                     renderItem={item => (
                         <List.Item
                             actions={[
-                                <a key="list-loadmore-edit" onClick={() => edit(item)}>edit</a>
-                                , <a key="list-loadmore-more" onClick={() => deleteContentCard(item)}>Delete</a>
+                                <a key="list-loadmore-edit" onClick={() => edit(item)} href="/">edit</a>
+                                , <a key="list-loadmore-more" onClick={() => deleteContentCard(item)} href="/">Delete</a>
                             ]}
                         >
                             <List.Item.Meta
                                 avatar={
                                     <Avatar src={require(`./../images/${item.ImageUrl}`)} />
                                 }
-                                title={<a>{item.ProductCode}</a>}
+                                title={<a href="/">{item.ProductCode}</a>}
                                 description={item.Description}
                             />
                             <div>{item.Price}</div>

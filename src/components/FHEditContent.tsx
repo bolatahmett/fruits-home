@@ -1,6 +1,5 @@
-import React, { useState, useEffect } from 'react'
-import PropTypes from 'prop-types'
-import { Row, Col, Input, Form, Select, TreeSelect, Cascader, DatePicker, InputNumber, Switch, Button } from 'antd';
+import React, { useEffect } from 'react'
+import { Input, Form, Select } from 'antd';
 import { ContentCard } from '../model/ContentCard';
 import TextArea from 'antd/lib/input/TextArea';
 import { connect } from 'react-redux';
@@ -21,9 +20,7 @@ function FHEditContent(props: FHEditContentProps) {
     }, [props.handlePopup])
 
     useEffect(() => {
-
         form.setFieldsValue(props.item);
-
     }, [props.item]);
 
     return (

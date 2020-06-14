@@ -1,7 +1,6 @@
 import React from 'react';
 import Modal from 'antd/lib/modal/Modal';
 
-
 interface FHPopupProps {
     visible: boolean;
     content: React.ReactNode;
@@ -11,7 +10,6 @@ interface FHPopupProps {
 }
 
 export default function FHPopup(props: FHPopupProps) {
-
     return (
         <div>
             <Modal
@@ -24,7 +22,6 @@ export default function FHPopup(props: FHPopupProps) {
             </Modal>
         </div>
     );
-
 }
 
 

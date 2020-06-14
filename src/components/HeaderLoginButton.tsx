@@ -1,15 +1,16 @@
-import React, { Component } from 'react'
-import { Button, Popover, Divider, Avatar } from 'antd'
+import React from 'react'
+import { Button, Popover, Avatar } from 'antd'
 import {
     UserOutlined
 } from '@ant-design/icons';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { exitUser } from './../redux/actions/actions';
-import { User } from '../model/User';
+import { useTranslation } from 'react-i18next';
 
 function HeaderLoginButton(props: any) {
 
+    const { t } = useTranslation();
     const exitUser = () => {
         props.exitUser();
     }
@@ -18,33 +19,27 @@ function HeaderLoginButton(props: any) {
         <div>
             <p>
                 <Link to={`/login`}>
-                    {/* Giriş yap */}
-                    <Button className="login" type="link" >Войти</Button>
+                    <Button className="login" type="link" > {t("header.login.button")}</Button>
                 </Link>
             </p>
             <p>
-                {/* Üye Ol */}
-                <Button className="login" type="link">Стать участником</Button>
+                <Button className="login" type="link">{t("header.signup.button")}</Button>
             </p>
         </div>
     </> :
         <>
             <div>
                 <p>
-                    {/* Siparişlerim */}
-                    <Button className="login" type="link">Мои заказы</Button>
+                    <Button className="login" type="link">{t("header.orders.button")}</Button>
                 </p>
                 <p>
-                    {/* Detaylarım */}
-                    <Button className="login" type="link"> Мои данные</Button>
+                    <Button className="login" type="link">{t("header.details.button")}</Button>
                 </p>
                 <p>
-                    {/* Mesajlarım */}
-                    <Button className="login" type="link">Мои сообщения</Button>
+                    <Button className="login" type="link">{t("header.messages.button")}</Button>
                 </p>
                 <p>
-                    {/* Exit */}
-                    <Button className="login" type="link" onClick={exitUser}>Выход</Button>
+                    <Button className="login" type="link" onClick={exitUser}>{t("header.exit.button")}</Button>
                 </p>
             </div>
         </>;

@@ -2,10 +2,8 @@ import React from 'react'
 import { connect } from 'react-redux';
 import { List, Avatar, Button, Row, Col, Steps, Result, Divider } from 'antd';
 import { Product } from '../model/Product';
-import { Typography } from 'antd';
 import { addToBasket } from './../redux/actions/actions';
 import ExtractOfAccount from '../components/ExtractOfAccount';
-const { Text } = Typography;
 const { Step } = Steps;
 
 
@@ -83,8 +81,6 @@ class BasketResult extends React.Component<any, any> {
                 )}
             />
         }
-
-        const totalQuantity = 1000;
 
         return (
             <>

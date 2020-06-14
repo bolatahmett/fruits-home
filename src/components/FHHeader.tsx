@@ -1,19 +1,15 @@
 import React, { useState } from "react";
-import { Row, Col, Input, Popover, Carousel, Alert, Badge, Divider, Button } from "antd";
-import { PhoneOutlined } from '@ant-design/icons';
-import { Typography } from 'antd';
-import FHHeaderMenu from "./FHHeaderMenu";
+import { Row, Col, Alert, Divider, Button } from "antd";
 import TextLoop from 'react-text-loop';
 import FHBasket from "./FHBasket";
 import HeaderLoginButton from "./HeaderLoginButton";
 import { SearchOutlined } from '@ant-design/icons';
 import Search from "antd/lib/input/Search";
 import { Link } from "react-router-dom";
-import FHMenu from "./FHMenu";
 import { connect } from "react-redux";
 import { User } from "../model/User";
+import LanguageSelector from "./LanguageSelector";
 
-const { Text } = Typography;
 
 function FHHeader(props: any) {
 
@@ -38,6 +34,9 @@ function FHHeader(props: any) {
                     </Col>
                     <Col xs={3} sm={2} md={2} lg={1} xl={1} style={{ textAlign: "right" }}>
                         <FHBasket></FHBasket>
+                    </Col>
+                    <Col xs={3} sm={2} md={2} lg={1} xl={1} style={{ textAlign: "right" }}>
+                        <LanguageSelector></LanguageSelector>
                     </Col>
                 </Row>
                 <Row style={{ width: "100%" }} justify={"center"}>

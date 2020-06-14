@@ -6,12 +6,28 @@ import { PersistGate } from 'redux-persist/integration/react';
 import configureStore from './configureStore';
 const { store, persistor } = configureStore();
 
-test('renders fruits home is open', () => {
-  const { getByText } = render(<Provider store={store}>
-    <PersistGate persistor={persistor}>
-      <App />
-    </PersistGate>
-  </Provider>);
-  const linkElement = getByText(/fruits home/i);
-  expect(linkElement).toBeInTheDocument();
+describe("Test", () => {
+  beforeAll(() => {
+    Object.defineProperty(window, "matchMedia", {
+      value: jest.fn(() => {
+        return {
+          matches: true,
+          addListener: jest.fn(),
+          removeListener: jest.fn()
+        };
+      })
+    });
+  });
+
+  test('renders fruits home is open', () => {
+    const { getByText } = render(<Provider store={store}>
+      <PersistGate persistor={persistor}>
+        <App />
+      </PersistGate>
+    </Provider>);
+    const linkElement = getByText(/fruits home/i);
+    expect(linkElement).toBeInTheDocument();
+  });
 });
+
+

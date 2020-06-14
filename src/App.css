@@ -191,3 +191,42 @@ background:#fff !important;
 .ant-list-footer{
     text-align: right;
 }
+
+
+/* FHBasket */
+
+.button-basket{
+     border: 2px !important;
+     border-radius: 8px !important;
+     background-color: antiquewhite !important;
+     font-size: x-small !important;
+}
+
+/* FHCarousel */
+.fhcarousel{
+  width: 100% !important;
+  justify-content: center !important; 
+  /* justify */
+}
+
+.fhcarousel div{
+  contain: content !important;
+}
+
+
+/* FHContent */
+.fhcontent {
+  justify-content: center !important;
+  align-content: center !important;
+  /* justify="center" align="middle" */
+}
+
+.fhcontent col {
+  margin: 1px !important;
+}
+
+/* fhcontentcard */
+.fhcontentcard-meta {
+  width: 100% !important;
+  text-align: center !important;
+}

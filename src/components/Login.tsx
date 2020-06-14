@@ -1,13 +1,16 @@
 import React from 'react'
+import './../i18n'
 import { Form, Input, Button, Checkbox, message } from 'antd';
 import { UserOutlined, LockOutlined } from '@ant-design/icons';
 import { connect } from 'react-redux';
 import { loginUser } from './../redux/actions/actions';
 import { User } from '../model/User';
-import { useHistory } from 'react-router-dom'
+import { useHistory } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 
-function Login(props: any) {
+export function Login(props: any) {
 
+    const { t } = useTranslation()
     let history = useHistory();
     const onFinish = (values: any) => {
         if (values.password === "123" && values.username === "ahmet") {
@@ -17,7 +20,6 @@ function Login(props: any) {
             } as unknown as User);
             history.push("/");
 
-            message.success("Giriş doğrulandı.");
         } else if (values.password === "onur" && values.username === "onur") {
             props.loginUser({
                 Id: "2",
@@ -26,11 +28,11 @@ function Login(props: any) {
             } as unknown as User);
             history.push("/");
 
-            message.success("Giriş doğrulandı.");
         } else {
-            message.warning("Üyelik bilgileri hatalı!");
+            message.warning(t("login.message.warning"));
             return false;
         }
+        message.success(t("login.message.success"));
     };
 
     return (
@@ -42,32 +44,32 @@ function Login(props: any) {
         >
             <Form.Item
                 name="username"
-                rules={[{ required: true, message: 'Please input your Username!' }]}
+                rules={[{ required: true, message: t('username.message') }]}
             >
-                <Input prefix={<UserOutlined className="site-form-item-icon" />} placeholder="Username" />
+                <Input prefix={<UserOutlined className="site-form-item-icon" />} placeholder={t('username.placeholder')} />
             </Form.Item>
             <Form.Item
                 name="password"
-                rules={[{ required: true, message: 'Please input your Password!' }]}
+                rules={[{ required: true, message: t('password.message') }]}
             >
                 <Input
                     prefix={<LockOutlined className="site-form-item-icon" />}
                     type="password"
-                    placeholder="Password"
+                    placeholder={t('password.placeholder')}
                 />
             </Form.Item>
             <Form.Item>
                 <Form.Item name="remember" valuePropName="checked" noStyle>
-                    <Checkbox style={{ float: "left" }}>Remember me</Checkbox>
+                    <Checkbox style={{ float: "left" }}>{t('remember.checkbox')}</Checkbox>
                 </Form.Item>
 
-                <a className="login-form-forgot" href="">
-                    Forgot password </a>
+                <a className="login-form-forgot" href="/">
+                    {t('forgotpassword.a')} </a>
             </Form.Item>
 
             <Form.Item>
-                <Button type="primary" htmlType="submit" className="login-form-button"> Log in </Button>
-                Or <a href="">register now!</a>
+                <Button type="primary" htmlType="submit" name="login_button" className="login-form-button"> {t("login.label")} </Button>
+                {t("or.label")} <a href="/">{t("register.label")}</a>
             </Form.Item>
         </Form>
     )
