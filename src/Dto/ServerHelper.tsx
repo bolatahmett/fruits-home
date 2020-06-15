@@ -1,19 +1,19 @@
 import axios from 'axios';
 
 export async function addItem(product: any): Promise<any> {
-    return await apiCall("http://localhost:5000/api/addItem", product);
+    return await apiCall("https://fruitshome.ru/api/addItem", product);
 }
 
 export async function removeItem(product: any): Promise<any> {
-    return await apiCall("http://localhost:5000/api/removeItem", JSON.stringify(product));
+    return await apiCall("https://fruitshome.ru/api/removeItem", JSON.stringify(product));
 }
 
 export async function getItem(jsonQuery: any): Promise<any> {
-    return await apiCall("http://localhost:5000/api/getItem", jsonQuery);
+    return await apiCall("https://fruitshome.ru/api/getItem", jsonQuery);
 }
 
 export async function getAllItems(): Promise<any> {
-    const result = await apiCall("http://localhost:5000/api/getAll", "");
+    const result = await apiCall("https://fruitshome.ru/api/getAll", "");
     console.log("result:", result);
     return result;
 }

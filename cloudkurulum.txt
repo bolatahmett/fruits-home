@@ -1,0 +1,42 @@
+git clone https://github.com/bolatahmett/furits-home.git fruitshome.ru
+cd /var/www/fruitshome.ru
+
+
+map $http_upgrade $connection_upgrade {
+    default         upgrade;
+    ''              close;
+}
+server {
+     
+       server_name fruitshome.ru www.fruitshome.ru;
+       
+       location / {
+        # Backend nodejs server
+        proxy_pass         http://127.0.0.1:5000;
+        proxy_http_version  1.1;
+        proxy_set_header    Upgrade     $http_upgrade;
+        proxy_set_header    Connection  $connection_upgrade;
+    }
+}
+
+certbot --nginx -d fruitshome.ru -d www.fruitshome.ru
+
+Gc6Ic3Ux5
+
+
+ns59.domaincontrol.com	
+ns60.domaincontrol.com
+
+ dig ns-cloud-a1.googledomains.com +short
+ 
+ 
+ 
+ 
+sudo su
+cd /var/www
+git clone https://github.com/bolatahmett/furits-home.git fruitshome.ru
+cd /var/www/fruitshome.ru
+npm run-script build
+serve -s build &
+
+git clone https://github.com/bolatahmett/furits-home.git fruitshomeserver.ru
