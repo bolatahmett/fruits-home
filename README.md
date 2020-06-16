@@ -13,6 +13,7 @@ Kullanılan teknolojiler:
 *Axios
 *Jest
 *Google Cloud
+*nginx
 
 
 Admin: onur Pass: onur
