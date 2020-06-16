@@ -73,7 +73,7 @@ background:#fff !important;
 .ant-layout-content {
   background: #fff;
   color: #fff;
-  min-height: 120px;
+  min-height: 720px;
   line-height: 120px;
 }
 [data-theme="dark"] .ant-layout-content {
