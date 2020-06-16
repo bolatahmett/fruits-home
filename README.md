@@ -1,3 +1,5 @@
+[https://fruitshome.ru/]
+
 # Beklenen işlevler: 
 - Üye girişi
 - Ürün görüntüleme
