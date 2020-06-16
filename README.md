@@ -1,12 +1,13 @@
-Beklenen işlevler: 
+# Beklenen işlevler: 
 *Üye girişi
 *Ürün görüntüleme
 *Admin veri girişi
 *Seçilen ürünlerin sepete eklenmesi
 *Sepeti görüntüleme
 *Ödeme ve siparişi tamamlama
+*Türkçe ve Rusça Dil Desteği
 
-Kullanılan teknolojiler:
+# Kullanılan teknolojiler:
 *React
 *Typescript
 *Redux
@@ -16,5 +17,6 @@ Kullanılan teknolojiler:
 *nginx
 
 
-Admin: onur Pass: onur
-User: ahmet Pass: 123
+# Login Info
+*Admin: onur Pass: onur
+*User: ahmet Pass: 123
