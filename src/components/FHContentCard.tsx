@@ -11,8 +11,8 @@ import { Product } from '../model/Product';
 const { Text } = Typography;
 
 interface FHContentCardProps {
-    imageUrl: string;
-    altInfo: string;
+    imageUrl?: string;
+    altInfo?: string;
     title: string;
     description: string;
     price: string;
@@ -93,7 +93,7 @@ class FHContentCard extends React.Component<FHContentCardProps, FHContentCardSta
                                 avatar={
                                     <img
                                         alt={this.props.altInfo}
-                                        src={require(`./../images/${this.props.imageUrl}`)}
+                                        src={require(`./../images/${this.props.imageUrl === undefined || this.props.imageUrl === "" ? "no_image_available.jpg" : this.props.imageUrl}`)}
                                         className={"card-image"}
                                     />
                                 }

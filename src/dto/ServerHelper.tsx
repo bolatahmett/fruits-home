@@ -4,8 +4,8 @@ export async function addItem(product: any): Promise<any> {
     return await apiCall("https://fruitshome.ru/api/addItem", product);
 }
 
-export async function removeItem(product: any): Promise<any> {
-    return await apiCall("https://fruitshome.ru/api/removeItem", JSON.stringify(product));
+export async function removeItem(jsonQuery: any): Promise<any> {
+    return await apiCall("https://fruitshome.ru/api/removeItem", jsonQuery);
 }
 
 export async function getItem(jsonQuery: any): Promise<any> {

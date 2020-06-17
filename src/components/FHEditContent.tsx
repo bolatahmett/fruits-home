@@ -8,13 +8,15 @@ interface FHEditContentProps {
     item: ContentCard;
     saveChanges: (item: ContentCard) => void;
     handlePopup: any;
+    itemStatus: string;
 }
 
 function FHEditContent(props: FHEditContentProps) {
     const [form] = Form.useForm();
     useEffect(() => {
         if (props.handlePopup) {
-            const savingItem: ContentCard = form.getFieldsValue(true) as ContentCard;
+            let savingItem: ContentCard = form.getFieldsValue(true) as ContentCard;
+            savingItem.Status = props.itemStatus;
             props.saveChanges(savingItem);
         }
     }, [props.handlePopup])

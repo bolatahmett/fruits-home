@@ -7,5 +7,5 @@ export interface ContentCard {
     StockStatus: string;
     ProductType: string;
     ProductCode: string;
-    IsDeleted: string;
+    Status: string;
 }
