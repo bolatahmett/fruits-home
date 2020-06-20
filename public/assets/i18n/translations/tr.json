@@ -20,5 +20,19 @@
     "header.orders.button": "Siparişlerim",
     "header.details.button": "Detaylarım",
     "header.messages.button": "Mesajlarım",
-    "header.exit.button": "Çıkış"
+    "header.exit.button": "Çıkış",
+    "add.product.button": "İçerik Ekle",
+    "textloop.text.1": "Satılık Domates",
+    "textloop.text.2": "Çilek alınması tavsiye edilir",
+    "textloop.text.3": "İndirimli Greyfurt",
+    "basket.result.step.1": "Sepeti Görüntüle",
+    "basket.result.step.2": "Ödeme",
+    "basket.result.step.3": "İşlemi Tamamla",
+    "basket.result.previous.button": "Geri",
+    "basket.result.next.button": "İleri",
+    "basket.result.pay.info": "Ibana Eft/Havale Yapabilirsiniz",
+    "basket.result.pay.result.title": "Siparişiniz alındı",
+    "basket.result.pay.result.orderno.label": "Sipariş no",
+    "basket.result.goto.order.detail": "Siparişe Git",
+    "homepage": "Anasayfa"
 }

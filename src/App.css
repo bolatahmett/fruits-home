@@ -86,7 +86,14 @@ background:#fff !important;
   margin: 0;
 }
 
+.ant-row.ant-row-center.ant-row-middle.basket-result-middle {
+  min-height: 400px !important;
+}
 
+.ant-row.ant-row-center.ant-row-middle.basket-result-footer {
+  height: 70px !important;
+  align-content: flex-end !important;
+}
 
 .header-descriptions{
   height: 100px !important;

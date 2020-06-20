@@ -20,5 +20,19 @@
     "header.orders.button": "мои заказы",
     "header.details.button": "Мои данные",
     "header.messages.button": "Мои сообщения",
-    "header.exit.button": "Выход"
+    "header.exit.button": "Выход",
+    "add.product.button": "добавить контент",
+    "textloop.text.1": "Помидор продается",
+    "textloop.text.2": "Рекомендуется брать клубнику",
+    "textloop.text.3": "Грейпфрут Та скидка",
+    "basket.result.step.1": "Просмотр корзины",
+    "basket.result.step.2": "оплата",
+    "basket.result.step.3": "завершение",
+    "basket.result.previous.button": "назад",
+    "basket.result.next.button": "вперед",
+    "basket.result.pay.info": "Ibana Eft/Havale Yapabilirsiniz",
+    "basket.result.pay.result.title": "Ваш заказ был получен.",
+    "basket.result.pay.result.orderno.label": "Номер заказа",
+    "basket.result.goto.order.detail": "Перейти к заказу",
+    "homepage": "домашняя страница"
 }

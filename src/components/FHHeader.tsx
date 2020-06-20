@@ -9,10 +9,11 @@ import { Link } from "react-router-dom";
 import { connect } from "react-redux";
 import { User } from "../model/User";
 import LanguageSelector from "./LanguageSelector";
+import { useTranslation } from 'react-i18next';
 
 
 function FHHeader(props: any) {
-
+    const { t } = useTranslation();
     const [searchVisible, setSearchVisible] = useState(false);
 
     return (
@@ -51,10 +52,9 @@ function FHHeader(props: any) {
                 </Row>
                 <Row style={{ width: "100%" }} justify={"center"}>
                     <Col xs={20} sm={20} md={18} lg={12} xl={12} style={{ textAlign: "center" }}>
-                        {/* İçerik Ekle */}
                         {props.user.IsAdmin &&
                             <Link to={"/edit-content"}>
-                                <Button type="primary" shape="round" >добавить контент</Button>
+                                <Button type="primary" shape="round" >{t("add.product.button")}</Button>
                             </Link>
                         }
                     </Col>
@@ -66,9 +66,9 @@ function FHHeader(props: any) {
                             banner
                             message={
                                 <TextLoop mask>
-                                    <div>Помидор продается</div>
-                                    <div>Рекомендуется брать клубнику</div>
-                                    <div>Грейпфрут Та скидка</div>
+                                    <div>{t("textloop.text.1")}</div>
+                                    <div>{t("textloop.text.2")}</div>
+                                    <div>{t("textloop.text.3")}</div>
                                 </TextLoop>
                             }
                         />
