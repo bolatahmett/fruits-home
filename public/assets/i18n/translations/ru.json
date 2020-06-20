@@ -10,6 +10,7 @@
     "or.label": "или",
     "login.message.success": "Логин подтвержден.",
     "login.message.warning": "Информация о членстве неверна!",
+    "login.must.message.warning": "Вам необходимо войти.",
     "basket.empty.label": "Ваша корзина пуста",
     "currency": "ruble",
     "typeofweight": "кг",

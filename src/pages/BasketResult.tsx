@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { connect } from 'react-redux';
-import { List, Avatar, Button, Row, Col, Steps, Result, Divider } from 'antd';
+import { List, Avatar, Button, Row, Col, Steps, Result, Divider, message } from 'antd';
 import { Product } from '../model/Product';
 import { addToBasket } from './../redux/actions/actions';
 import ExtractOfAccount from '../components/ExtractOfAccount';
@@ -11,6 +11,15 @@ const { Step } = Steps;
 function BasketResult(props: any) {
     const { t } = useTranslation();
     const [current, setCurrent] = useState(0);
+
+    const increaseCurrentStep = () => {
+        if (props.user.Name) {
+            setCurrent(current + 1)
+        }
+        else {
+            message.warning(t("login.must.message.warning"));
+        }
+    }
 
     const increaseProductQuantity = (product: Product) => {
         props.addToBasket({
@@ -111,7 +120,7 @@ function BasketResult(props: any) {
 
                 </Col>
                 <Col xs={11} sm={11} md={8} lg={8} xl={6} style={{ textAlignLast: "right" }}>
-                    <Button type={"default"} shape="round" size={"large"} onClick={() => { props.user.Name && setCurrent(current + 1) }} disabled={current === 3}> {t("basket.result.next.button")} </Button>
+                    <Button type={"default"} shape="round" size={"large"} onClick={increaseCurrentStep} disabled={current === 3}> {t("basket.result.next.button")} </Button>
                 </Col>
             </Row>
         </>

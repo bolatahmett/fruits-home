@@ -9,7 +9,7 @@ i18n
         lng: 'tr',
         backend: {
             /* translation file path */
-            loadPath: './assets/i18n/{{ns}}/{{lng}}.json'
+            loadPath: 'assets/i18n/{{ns}}/{{lng}}.json'
         },
         fallbackLng: 'tr',
         debug: true,

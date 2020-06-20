@@ -10,6 +10,7 @@
     "or.label": "veya",
     "login.message.success": "Giriş doğrulandı.",
     "login.message.warning": "Üyelik bilgileri hatalı!",
+    "login.must.message.warning": "Giriş yapmanız gerekmektedir.",
     "basket.empty.label": "Sepetiniz boş.",
     "currency": "TL",
     "typeofweight": "kg",
