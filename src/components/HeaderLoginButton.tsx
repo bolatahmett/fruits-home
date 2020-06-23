@@ -23,7 +23,9 @@ function HeaderLoginButton(props: any) {
                 </Link>
             </p>
             <p>
-                <Button className="login" type="link">{t("header.signup.button")}</Button>
+                <Link to={`/register`}>
+                    <Button className="login" type="link">{t("header.signup.button")}</Button>
+                </Link>
             </p>
         </div>
     </> :

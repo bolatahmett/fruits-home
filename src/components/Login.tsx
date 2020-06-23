@@ -7,32 +7,35 @@ import { loginUser } from './../redux/actions/actions';
 import { User } from '../model/User';
 import { useHistory } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
+import { getUser } from './../dto/ServerHelper';
 
 export function Login(props: any) {
 
     const { t } = useTranslation()
     let history = useHistory();
     const onFinish = (values: any) => {
-        if (values.password === "123" && values.username === "ahmet") {
-            props.loginUser({
-                Id: "1",
-                Name: values.username,
-            } as unknown as User);
-            history.push("/");
 
-        } else if (values.password === "onur" && values.username === "onur") {
-            props.loginUser({
-                Id: "2",
-                Name: values.username,
-                IsAdmin: true
-            } as unknown as User);
-            history.push("/");
-
-        } else {
+        getUser({
+            Nickname: values.username,
+            Password: values.password
+        }).then((result: any) => {
+            if (result !== undefined) {
+                props.loginUser({
+                    Id: "1",
+                    Name: values.username,
+                    IsAdmin: true
+                } as unknown as User);
+                message.success(t("login.message.success"));
+                history.push("/");
+            } else {
+                message.warning(t("login.message.warning"));
+                return false;
+            }
+        }).catch((error: any) => {
             message.warning(t("login.message.warning"));
             return false;
-        }
-        message.success(t("login.message.success"));
+        });
+
     };
 
     return (

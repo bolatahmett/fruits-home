@@ -13,6 +13,7 @@ import {
 } from "react-router-dom";
 import BasketResult from './pages/BasketResult';
 import LoginPage from './pages/LoginPage';
+import RegisterPage from './pages/RegisterPage';
 import EditContent from './pages/EditContent';
 
 const { Header, Footer, Content } = Layout;
@@ -36,6 +37,7 @@ export default class App extends React.Component<any, any> {
                       <Route exact path="/" component={Home} />
                       <Route exact path="/basket-result" component={BasketResult} />
                       <Route exact path="/login" component={LoginPage} />
+                      <Route exact path="/register" component={RegisterPage} />
                       <Route exact path="/edit-content" component={EditContent} />
                       <Route path="/detail-page/fruits/strawberry" component={() => <DetailPage typeOfContent={"fruits"} typeOfSubContent={"strawberry"} />} />
                       <Route path="/detail-page/fruits/orange" component={() => <DetailPage typeOfContent={"fruits"} typeOfSubContent={"orange"} />} />

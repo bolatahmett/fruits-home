@@ -6,7 +6,7 @@ import { DownOutlined } from '@ant-design/icons';
 const LanguageSelector = () => {
     const { t, i18n } = useTranslation()
 
-    const [lang, setLang] = useState("tr");
+    const [lang, setLang] = useState("ru");
 
     const changeLanguage = (value: any) => {
         debugger;
