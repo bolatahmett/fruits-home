@@ -19,7 +19,7 @@ export function Login(props: any) {
             Nickname: values.username,
             Password: values.password
         }).then((result: any) => {
-            if (result !== undefined) {
+            if (result !== undefined && result !== "") {
                 props.loginUser({
                     Id: "1",
                     Name: values.username,

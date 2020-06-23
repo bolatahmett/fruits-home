@@ -86,7 +86,7 @@ const RegistrationForm = () => {
     const onFinish = (values: any) => {
 
         getUser({ Email: values.email }).then((result: any) => {
-            if (result === undefined) {
+            if (result === undefined || result === "") {
                 addUser({
                     Agreement: values.agreement,
                     Confirm: values.confirm,
@@ -97,8 +97,10 @@ const RegistrationForm = () => {
                     Prefix: values.prefix,
                     Residence: values.residence
                 }).then((result: any) => {
-                    message.info("Kullanıc eklendi. Lütfen giriş yapın.");
-                    history.push("/login");
+                    if (result !== undefined && result !== "") {
+                        message.info("Kullancı eklendi. Lütfen giriş yapın.");
+                        history.push("/login");
+                    }
                 });
             }
         });
