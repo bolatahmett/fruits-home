@@ -1,6 +1,6 @@
-import React from 'react'
+import React, { useState } from 'react'
 import './../i18n'
-import { Form, Input, Button, Checkbox, message } from 'antd';
+import { Form, Input, Button, Checkbox, message, Spin } from 'antd';
 import { UserOutlined, LockOutlined } from '@ant-design/icons';
 import { connect } from 'react-redux';
 import { loginUser } from './../redux/actions/actions';
@@ -13,12 +13,15 @@ export function Login(props: any) {
 
     const { t } = useTranslation()
     let history = useHistory();
-    const onFinish = (values: any) => {
+    const [spinTip, setSpinTip] = useState("");
 
+    const onFinish = (values: any) => {
+        setSpinTip("Loading...");
         getUser({
             Nickname: values.username,
             Password: values.password
         }).then((result: any) => {
+
             if (result !== undefined && result !== "") {
                 props.loginUser({
                     Id: "1",
@@ -34,47 +37,51 @@ export function Login(props: any) {
         }).catch((error: any) => {
             message.warning(t("login.message.warning"));
             return false;
+        }).finally(() => {
+            setSpinTip("");
         });
 
     };
 
     return (
-        <Form
-            name="normal_login"
-            className="login-form"
-            initialValues={{ remember: true }}
-            onFinish={onFinish}
-        >
-            <Form.Item
-                name="username"
-                rules={[{ required: true, message: t('username.message') }]}
+        <Spin spinning={spinTip !== ""} tip={spinTip} size={"large"}>
+            <Form
+                name="normal_login"
+                className="login-form"
+                initialValues={{ remember: true }}
+                onFinish={onFinish}
             >
-                <Input prefix={<UserOutlined className="site-form-item-icon" />} placeholder={t('username.placeholder')} />
-            </Form.Item>
-            <Form.Item
-                name="password"
-                rules={[{ required: true, message: t('password.message') }]}
-            >
-                <Input
-                    prefix={<LockOutlined className="site-form-item-icon" />}
-                    type="password"
-                    placeholder={t('password.placeholder')}
-                />
-            </Form.Item>
-            <Form.Item>
-                <Form.Item name="remember" valuePropName="checked" noStyle>
-                    <Checkbox style={{ float: "left" }}>{t('remember.checkbox')}</Checkbox>
+                <Form.Item
+                    name="username"
+                    rules={[{ required: true, message: t('username.message') }]}
+                >
+                    <Input prefix={<UserOutlined className="site-form-item-icon" />} placeholder={t('username.placeholder')} />
+                </Form.Item>
+                <Form.Item
+                    name="password"
+                    rules={[{ required: true, message: t('password.message') }]}
+                >
+                    <Input
+                        prefix={<LockOutlined className="site-form-item-icon" />}
+                        type="password"
+                        placeholder={t('password.placeholder')}
+                    />
+                </Form.Item>
+                <Form.Item>
+                    <Form.Item name="remember" valuePropName="checked" noStyle>
+                        <Checkbox style={{ float: "left" }}>{t('remember.checkbox')}</Checkbox>
+                    </Form.Item>
+
+                    <a className="login-form-forgot" href="/">
+                        {t('forgotpassword.a')} </a>
                 </Form.Item>
 
-                <a className="login-form-forgot" href="/">
-                    {t('forgotpassword.a')} </a>
-            </Form.Item>
-
-            <Form.Item>
-                <Button type="primary" htmlType="submit" name="login_button" className="login-form-button"> {t("login.label")} </Button>
-                {t("or.label")} <a href="/">{t("register.label")}</a>
-            </Form.Item>
-        </Form>
+                <Form.Item>
+                    <Button type="primary" htmlType="submit" name="login_button" className="login-form-button"> {t("login.label")} </Button>
+                    {t("or.label")} <a href="/">{t("register.label")}</a>
+                </Form.Item>
+            </Form>
+        </Spin>
     )
 }
 

@@ -53,11 +53,10 @@ function FHContent(props: any) {
     });
 
     return <>
-
-        <Spin spinning={spinTip !== ""} tip={spinTip} size={"large"}>
-            {
-                defaultContent
-            } </Spin> </>
+        <Spin spinning={spinTip !== ""} tip={spinTip} size={"large"}> {
+            defaultContent
+        } </Spin>
+    </>
 }
 
 const mapStateToProps = (state: any) => {
