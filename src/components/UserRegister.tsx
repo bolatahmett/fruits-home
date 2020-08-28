@@ -16,6 +16,7 @@ import {
 import { QuestionCircleOutlined } from '@ant-design/icons';
 import { addUser, getUser } from './../dto/ServerHelper';
 import { useHistory } from 'react-router-dom';
+import { debug } from 'console';
 
 
 const { Option } = Select;
@@ -89,23 +90,37 @@ const RegistrationForm = () => {
         setSpinTip("Loading...");
         getUser({ Email: values.email }).then((result: any) => {
             if (result === undefined || result === "") {
-                addUser({
-                    Agreement: values.agreement,
-                    Confirm: values.confirm,
-                    Email: values.email,
-                    Nickname: values.nickname,
-                    Password: values.password,
-                    Phone: values.phone,
-                    Prefix: values.prefix,
-                    Residence: values.residence
-                }).then((result: any) => {
-                    if (result !== undefined && result !== "") {
-                        message.info("Kullancı eklendi. Lütfen giriş yapın.");
-                        history.push("/login");
+                getUser({ Nickname: values.nickname }).then((resultNickName: any) => {
+                    debugger;
+                    if (resultNickName === undefined || resultNickName === "") {
+                        addUser({
+                            Agreement: values.agreement,
+                            Confirm: values.confirm,
+                            Email: values.email,
+                            Nickname: values.nickname,
+                            Password: values.password,
+                            Phone: values.phone,
+                            Prefix: values.prefix,
+                            Residence: values.residence,
+                            IsAdmin: false
+                        }).then((result: any) => {
+                            if (result !== undefined && result !== "") {
+                                message.info("Kullancı eklendi. Lütfen giriş yapın.");
+                                history.push("/login");
+                            }
+                        });
+
+                    } else {
+                        message.info("Geçersiz veya kullanılmıs kullanıcı adı! Lütfen farklı bir kullanıcı adı deneyin.");
                     }
+
+                }).catch((errornickname: any) => {
+                    message.error(errornickname);
+                }).finally(() => {
+                    setSpinTip("");
                 });
             } else {
-                message.info("Bu gmail adresi ile kayıt bulunuyor.");
+                message.info("Geçersiz veya kullanılmıs mail adresi! Lütfen farklı bir mail adresi deneyin.");
             }
         }).catch((error: any) => {
             message.error(error);

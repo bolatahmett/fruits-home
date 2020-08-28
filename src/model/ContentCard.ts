@@ -3,7 +3,7 @@ export interface ContentCard {
     AltInfo: string;
     Title: string;
     Description: string;
-    Price: string;
+    Price: number;
     StockStatus: string;
     ProductType: string;
     ProductCode: string;

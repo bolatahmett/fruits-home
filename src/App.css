@@ -126,6 +126,7 @@ background:#fff !important;
   height: 160px;
   line-height: 160px;
   overflow: hidden;
+  border-radius: 25px !important;
 }
 
 .ant-carousel .slick-slide h3 {
@@ -160,6 +161,10 @@ background:#fff !important;
   height: 500px !important;
   background-color:red;
   -webkit-box-pack: center;
+}
+
+.ant-card.ant-card-bordered {
+  border-radius: 20px !important;
 }
 
 .ant-card-cover > * {

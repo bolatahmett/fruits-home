@@ -5,7 +5,6 @@ const basket = (state = [] as Product[], action: AnyAction) => {
     switch (action.type) {
         case 'ADD_TO_BASKET':
 
-            debugger;
             const existsProduct: Product[] = state.filter((item: Product) => {
                 return item.ProductCode === action.product.ProductCode
             });
@@ -15,7 +14,7 @@ const basket = (state = [] as Product[], action: AnyAction) => {
                 if (index > -1) {
                     state.splice(index, 1);
                 }
-                action.product.Quantity = action.product.Quantity + existsProduct[0].Quantity;
+                action.product.Quantity = Number(action.product.Quantity) + Number(existsProduct[0].Quantity);
             }
 
             state.push(action.product);

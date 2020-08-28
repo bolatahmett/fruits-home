@@ -15,7 +15,7 @@ interface FHContentCardProps {
     altInfo?: string;
     title: string;
     description: string;
-    price: string;
+    price: number;
     stockStatus: string;
     addTodo: any;
     openDrawer: any;
@@ -46,7 +46,8 @@ class FHContentCard extends React.Component<FHContentCardProps, FHContentCardSta
             ProductCode: this.props.productCode,
             ProductType: this.props.productType,
             Quantity: this.state.productQuantity,
-            ImageUrl: this.props.imageUrl
+            ImageUrl: this.props.imageUrl,
+            Price: this.props.price
         } as Product);
         message.success(this.state.productQuantity + ' килограмм ' + this.props.productCode + ' Добавлено в корзину');
     }

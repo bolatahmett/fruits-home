@@ -5,6 +5,9 @@ import { Product } from '../model/Product';
 import { addToBasket } from './../redux/actions/actions';
 import ExtractOfAccount from '../components/ExtractOfAccount';
 import { useTranslation } from 'react-i18next';
+import CheckoutForm from '../components/Payment/CheckoutForm';
+import { loadStripe } from '@stripe/stripe-js';
+import { Elements } from '@stripe/react-stripe-js';
 const { Step } = Steps;
 
 
@@ -26,7 +29,8 @@ function BasketResult(props: any) {
             ProductCode: product.ProductCode,
             ProductType: product.ProductType,
             Quantity: 1,
-            ImageUrl: product.ImageUrl
+            ImageUrl: product.ImageUrl,
+            Price: product.Price
         } as Product);
     }
 
@@ -36,7 +40,8 @@ function BasketResult(props: any) {
                 ProductCode: product.ProductCode,
                 ProductType: product.ProductType,
                 Quantity: -1,
-                ImageUrl: product.ImageUrl
+                ImageUrl: product.ImageUrl,
+                Price: product.Price
             } as Product);
         }
     }
@@ -71,6 +76,8 @@ function BasketResult(props: any) {
         return content;
     }
 
+    const stripePromise = loadStripe("pk_test_51HG2jBEOfZ2768EMe3kXQcOnpxuTUtPGOL4CBYSDirFttRrIYgI9F3JNsgut0hku3fbaqvAvn1m2qq4Tu6033SZx00vsIvSi2G");
+
     return (
         <>
             <Row justify={"center"}>
@@ -87,28 +94,25 @@ function BasketResult(props: any) {
                 <Col xs={24} sm={24} md={12} lg={12} xl={12}>
                     {
                         current === 0 && <>
-                            {getContent()}
-                            <ExtractOfAccount></ExtractOfAccount>
+                            <Row>
+                                <Col span={24}>
+                                    {getContent()}
+                                </Col>
+                            </Row>
+                            <Row>
+                                <Col span={6} offset={18}>
+                                    <ExtractOfAccount></ExtractOfAccount>
+                                </Col>
+                            </Row>
                         </>
                     }
                     {
                         current === 1 && <>
-                            <p style={{
-                                fontStyle: "italic", color: "black"
-                            }}> {t("basket.result.pay.info")} {": TR12 10 0000 0000 0000 4874"} </p>
-                        </>
-                    }
-                    {
-                        current === 2 && <>
-                            <Result
-                                status="success"
-                                title={t("basket.result.pay.result.title")}
-                                subTitle={t("basket.result.pay.result.orderno.label") + ": 2017182818828182881"}
-                                extra={[
-                                    <Button type="primary" key="console"> {t("basket.result.goto.order.detail")}</Button>,
-                                    <Button key="buy">{t("homepage")}</Button>
-                                ]}
-                            />
+                            {
+                                <Elements stripe={stripePromise}>
+                                    <CheckoutForm />
+                                </Elements>
+                            }
                         </>
                     }
                 </Col>

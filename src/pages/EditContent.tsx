@@ -72,7 +72,7 @@ export const EditContent = (props: any) => {
             AltInfo: "",
             Title: "",
             Description: "",
-            Price: "",
+            Price: 0,
             StockStatus: "",
             ProductType: "",
             ProductCode: "",

@@ -21,12 +21,13 @@ export function Login(props: any) {
             Nickname: values.username,
             Password: values.password
         }).then((result: any) => {
-
+            debugger;
             if (result !== undefined && result !== "") {
                 props.loginUser({
                     Id: "1",
                     Name: values.username,
-                    IsAdmin: true
+                    IsAdmin: result.IsAdmin,
+                    Email: result.Email
                 } as unknown as User);
                 message.success(t("login.message.success"));
                 history.push("/");

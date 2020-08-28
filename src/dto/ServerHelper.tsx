@@ -1,4 +1,4 @@
-import axios from 'axios';
+import axios, { AxiosRequestConfig } from 'axios';
 
 export async function addItem(jsonQuery: any): Promise<any> {
     return await apiCall("https://fruitshome.ru/api/addItem", jsonQuery);
@@ -18,9 +18,6 @@ export async function getAllItems(): Promise<any> {
 }
 
 
-
-
-
 export async function addUser(jsonQuery: any): Promise<any> {
     return await apiCall("https://fruitshome.ru/api/addUser", jsonQuery);
 }
@@ -37,10 +34,6 @@ export async function getAllUsers(): Promise<any> {
     const result = await apiCall("https://fruitshome.ru/api/getAllUsers");
     return result;
 }
-
-
-
-
 
 export async function apiCall(url: any, requestBody: any = ""): Promise<any> {
     let result = undefined;

@@ -32,7 +32,7 @@ export function FHBasket(props: any) {
                     <List.Item>
                         <List.Item.Meta
                             avatar={<Avatar src={require(`./../images/${product.ImageUrl}`)} />}
-                            title={product.ProductCode}
+                            title={`${product.ProductCode} - ${product.Price} ${"рубль"}`}
                             description={product.Quantity.toString() + t("typeofweight")}
                         />
                     </List.Item>
