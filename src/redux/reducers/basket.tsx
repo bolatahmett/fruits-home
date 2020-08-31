@@ -11,17 +11,13 @@ const basket = (state = [] as Product[], action: AnyAction) => {
 
             if (existsProduct.length > 0) {
                 const index = state.indexOf(existsProduct[0] as never, 0);
-                if (index > -1) {
-                    state.splice(index, 1);
-                }
-                action.product.Quantity = Number(action.product.Quantity) + Number(existsProduct[0].Quantity);
+                const quantity = Number(action.product.Quantity) + Number(existsProduct[0].Quantity);
+                state[index].Quantity = quantity < 0 ? 0 : quantity;
+            } else {
+                state.push(action.product);
             }
 
-            state.push(action.product);
-
-            return [
-                ...state
-            ];
+            return [...state];
         default:
             return state
     }

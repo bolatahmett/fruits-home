@@ -1,6 +1,6 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { connect } from 'react-redux';
-import { List, Avatar, Button, Row, Col, Steps, Result, Divider, message } from 'antd';
+import { List, Avatar, Button, Row, Col, Steps, Result, Divider, message, Input } from 'antd';
 import { Product } from '../model/Product';
 import { addToBasket } from './../redux/actions/actions';
 import ExtractOfAccount from '../components/ExtractOfAccount';
@@ -8,6 +8,9 @@ import { useTranslation } from 'react-i18next';
 import CheckoutForm from '../components/Payment/CheckoutForm';
 import { loadStripe } from '@stripe/stripe-js';
 import { Elements } from '@stripe/react-stripe-js';
+import { Typography, Space } from 'antd';
+
+const { Text } = Typography;
 const { Step } = Steps;
 
 
@@ -24,22 +27,22 @@ function BasketResult(props: any) {
         }
     }
 
-    const increaseProductQuantity = (product: Product) => {
+    const increaseProductQuantity = (product: Product, quantity: number = 1) => {
         props.addToBasket({
             ProductCode: product.ProductCode,
             ProductType: product.ProductType,
-            Quantity: 1,
+            Quantity: quantity,
             ImageUrl: product.ImageUrl,
             Price: product.Price
         } as Product);
     }
 
-    const decreaseProductQuantity = (product: Product) => {
+    const decreaseProductQuantity = (product: Product, quantity: number = -1) => {
         if (props.basket.length > 0) {
             props.addToBasket({
                 ProductCode: product.ProductCode,
                 ProductType: product.ProductType,
-                Quantity: -1,
+                Quantity: quantity,
                 ImageUrl: product.ImageUrl,
                 Price: product.Price
             } as Product);
@@ -59,14 +62,23 @@ function BasketResult(props: any) {
                 renderItem={(product: Product) => (
                     <List.Item
                         actions={[
-                            <Button type="ghost" shape="circle" onClick={() => decreaseProductQuantity(product)}>-</Button>,
+                            <Button type="ghost" shape="circle" disabled={product.Quantity == 0} onClick={() => decreaseProductQuantity(product)}>-</Button>,
                             <Button type="ghost" shape="circle" onClick={() => increaseProductQuantity(product)}>+</Button>
                         ]}>
 
                         <List.Item.Meta
                             avatar={<Avatar src={require(`./../images/${product.ImageUrl}`)} />}
                             title={product.ProductCode}
-                            description={product.Quantity + "кг"}
+                            description={
+                                <>
+                                    <Input type={"number"} value={product.Quantity}
+                                        onChange={(e) => {
+                                            const diff = product.Quantity - Number(e.target.value);
+                                            decreaseProductQuantity(product, -diff);
+                                        }} style={{ marginLeft: "100px", maxWidth: "100px", textAlign: "center" }} />
+                                    <Text code>kr</Text>
+                                </>
+                            }
                         />
                     </List.Item>
                 )}
