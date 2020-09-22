@@ -68,7 +68,10 @@ export function FHBasket(props: any) {
             placement="leftBottom"
         >
             <Badge count={props.basket.length}>
-                <Button shape="circle" icon={<ShoppingCartOutlined />} />
+                {/* <ShoppingCartOutlined /> */}
+                <a href="#">
+                    <img src={require("./../images/shopping-cart.png")} />
+                </a>
             </Badge>
         </Popover>
     )

@@ -38,18 +38,19 @@ function FHContent(props: any) {
                 </Row>
                 <p></p>
             </>)
+        } else {
+            return (<>
+                <Row className={"fhcontent"}>
+                    <Col xs={24} sm={24} md={11} lg={8} xl={9}>
+                        <FHContentCard imageUrl={cardItemL.ImageUrl} altInfo={cardItemL.AltInfo} title={cardItemL.Title} description={cardItemL.Description} price={cardItemL.Price} stockStatus={cardItemL.StockStatus} productCode={cardItemL.ProductCode} productType={cardItemL.ProductType}></FHContentCard>
+                    </Col>
+                    <Col xs={24} sm={24} md={11} lg={8} xl={9}>
+                        <FHContentCard imageUrl={cardItemR.ImageUrl} altInfo={cardItemR.AltInfo} title={cardItemR.Title} description={cardItemR.Description} price={cardItemR.Price} stockStatus={cardItemR.StockStatus} productCode={cardItemR.ProductCode} productType={cardItemR.ProductType}></FHContentCard>
+                    </Col>
+                </Row>
+                <p></p>
+            </>)
         }
-        return (<>
-            <Row className={"fhcontent"}>
-                <Col xs={24} sm={24} md={11} lg={8} xl={9}>
-                    <FHContentCard imageUrl={cardItemL.ImageUrl} altInfo={cardItemL.AltInfo} title={cardItemL.Title} description={cardItemL.Description} price={cardItemL.Price} stockStatus={cardItemL.StockStatus} productCode={cardItemL.ProductCode} productType={cardItemL.ProductType}></FHContentCard>
-                </Col>
-                <Col xs={24} sm={24} md={11} lg={8} xl={9}>
-                    <FHContentCard imageUrl={cardItemR.ImageUrl} altInfo={cardItemR.AltInfo} title={cardItemR.Title} description={cardItemR.Description} price={cardItemR.Price} stockStatus={cardItemR.StockStatus} productCode={cardItemR.ProductCode} productType={cardItemR.ProductType}></FHContentCard>
-                </Col>
-            </Row>
-            <p></p>
-        </>)
     });
 
     return <>

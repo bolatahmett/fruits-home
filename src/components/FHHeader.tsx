@@ -10,6 +10,9 @@ import { connect } from "react-redux";
 import { User } from "../model/User";
 import LanguageSelector from "./LanguageSelector";
 import { useTranslation } from 'react-i18next';
+import FHHeaderMenu from "./FHHeaderMenu";
+import FHLeftHeader from "./FHLeftHeader";
+import FHRightHeader from "./FHRightHeader";
 
 
 function FHHeader(props: any) {
@@ -20,25 +23,16 @@ function FHHeader(props: any) {
         <>
             <Row style={{ width: "100%" }}>
                 <Row justify="center" style={{ width: "100%" }}>
-                    <Col xs={2} sm={2} md={2} lg={2} xl={1} style={{ textAlign: "left" }}>
-                        <LanguageSelector></LanguageSelector>
-                    </Col>
-                    <Col xs={2} sm={2} md={2} lg={2} xl={1} style={{ textAlign: "left" }}>
-                        <Button shape="circle" icon={<SearchOutlined />} onClick={() => {
-                            setSearchVisible(!searchVisible)
-                        }} />
+                    <Col xs={4} sm={4} md={4} lg={4} xl={2} style={{ textAlign: "left" }}>
+                        <FHLeftHeader setSearchVisible={setSearchVisible} searchVisible={searchVisible}></FHLeftHeader>
                     </Col>
                     <Col xs={14} sm={13} md={13} lg={14} xl={14} style={{ textAlign: "center" }} >
                         <Link to={"/"}>
                             <h1 className={"header-text"}> FRUITS HOME</h1>
                         </Link>
                     </Col>
-
-                    <Col xs={2} sm={2} md={2} lg={1} xl={1} style={{ textAlign: "right" }}>
-                        <FHBasket></FHBasket>
-                    </Col>
-                    <Col xs={2} sm={2} md={2} lg={1} xl={1} style={{ textAlign: "right" }}>
-                        <HeaderLoginButton></HeaderLoginButton>
+                    <Col xs={4} sm={4} md={4} lg={3} xl={2} style={{ textAlign: "right" }}>
+                        <FHRightHeader></FHRightHeader>
                     </Col>
                 </Row>
                 <Row style={{ width: "100%" }} justify={"center"}>
@@ -59,7 +53,9 @@ function FHHeader(props: any) {
                         }
                     </Col>
                 </Row>
-                <Divider />
+                <br></br>
+                <FHHeaderMenu></FHHeaderMenu>
+
                 <Row style={{ width: "100%" }} justify={"center"}>
                     <Col xs={24} sm={24} md={24} lg={20} xl={18}>
                         <Alert
