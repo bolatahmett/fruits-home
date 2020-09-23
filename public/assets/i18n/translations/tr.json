@@ -35,5 +35,15 @@
     "basket.result.pay.result.title": "Siparişiniz alındı",
     "basket.result.pay.result.orderno.label": "Sipariş no",
     "basket.result.goto.order.detail": "Siparişe Git",
-    "homepage": "Anasayfa"
+    "homepage": "ANASAYFA",
+    "fruits": "MEYVE",
+    "vegetable": "SEBZE",
+    "aboutus": "HAKKIMIZDA",
+    "header.menu.exoticfruits": "Ekzotik Meyve",
+    "header.menu.citrus": "Narenciye",
+    "header.menu.organicfruits": "Organik Meyveler",
+    "header.menu.seasonalvegetables": "Mevsim Sebzeler",
+    "header.menu.organicvegetables": "Organik Sebzeler",
+    "header.menu.greens": "Yesillik",
+    "header.menu.potatoesonionsandgarlic": "Patates, soğanve sarımsak"
 }

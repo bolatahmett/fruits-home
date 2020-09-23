@@ -35,5 +35,15 @@
     "basket.result.pay.result.title": "Ваш заказ был получен.",
     "basket.result.pay.result.orderno.label": "Номер заказа",
     "basket.result.goto.order.detail": "Перейти к заказу",
-    "homepage": "домашняя страница"
+    "homepage": "ГЛАВНАЯ СТРАНИЦА",
+    "fruits": "ФРУКТЫ",
+    "vegetable": "ОВОЩИ",
+    "aboutus": "НАСЧЕТ НАС",
+    "header.menu.exoticfruits": "Экзотические фрукты",
+    "header.menu.citrus": "цитрусовый",
+    "header.menu.organicfruits": "Органические фрукты",
+    "header.menu.seasonalvegetables": "Сезонные овощи",
+    "header.menu.organicvegetables": "Органические овощи",
+    "header.menu.greens": "Зелень, зелень",
+    "header.menu.potatoesonionsandgarlic": "Картофель, лук и чеснок"
 }

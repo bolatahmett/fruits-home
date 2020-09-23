@@ -20,7 +20,7 @@ export default function FHHeaderMenu(props: any) {
     };
 
     return (
-        <Row className={"fhcarousel"}>
+        <Row className={"fhheadermenu"}>
             <Col xs={24} sm={24} md={24} lg={20} xl={18}>
                 <Menu onClick={handleClick} mode="horizontal">
                     <Menu.Item key="mail">
@@ -29,23 +29,16 @@ export default function FHHeaderMenu(props: any) {
                     </Menu.Item>
                     <SubMenu
                         title={<span className="submenu-title-wrapper"> <DownCircleOutlined /> {t("fruits")} </span>}>
-                        {/* <Menu.Item key="setting:1" > <Link to="/detail-page/fruits/strawberry">клубника</Link> </Menu.Item>
-                        <Menu.Item key="setting:2"> <Link to="/detail-page/fruits/orange">оранжевый</Link> </Menu.Item>
-                        <Menu.Item key="setting:3"> <Link to="/detail-page/fruits/grapefruit">грейпфрут</Link> </Menu.Item> */}
-                        <Menu.Item key="setting:1" > Экзотические фрукты </Menu.Item>
-                        <Menu.Item key="setting:2" > цитрусовый  </Menu.Item>
-                        <Menu.Item key="setting:3" > Органические фрукты  </Menu.Item>
-                        <Menu.Item key="setting:4" > Жесткие фрукты  </Menu.Item>
-                        <Menu.Item key="setting:5" > Мягкие фрукты  </Menu.Item>
+                        <Menu.Item key="setting:2" > {t("header.menu.citrus")}  </Menu.Item>
+                        <Menu.Item key="setting:1" > {t("header.menu.exoticfruits")} </Menu.Item>
+                        <Menu.Item key="setting:3" > {t("header.menu.organicfruits")}  </Menu.Item>
                     </SubMenu>
                     <SubMenu
                         title={<span className="submenu-title-wrapper"> <DownCircleOutlined /> {t("vegetable")} </span>}  >
-                        <Menu.Item key="setting:6" > Готовые поставки еды </Menu.Item>
-                        <Menu.Item key="setting:7" > Сезонные овощи </Menu.Item>
-                        <Menu.Item key="setting:8" > Органические овощи </Menu.Item>
-                        <Menu.Item key="setting:9" > Зелень, зелень </Menu.Item>
-                        <Menu.Item key="setting:10" > Картофель, лук и чеснок </Menu.Item>
-                        <Menu.Item key="setting:11" > Салат Ингредиенты </Menu.Item>
+                        <Menu.Item key="setting:7" > {t("header.menu.seasonalvegetables")} </Menu.Item>
+                        <Menu.Item key="setting:8" > {t("header.menu.organicvegetables")} </Menu.Item>
+                        <Menu.Item key="setting:9" > {t("header.menu.greens")} </Menu.Item>
+                        <Menu.Item key="setting:10" > {t("header.menu.potatoesonionsandgarlic")} </Menu.Item>
                     </SubMenu>
                     <Menu.Item key="aboutus">
                         <InfoCircleOutlined />

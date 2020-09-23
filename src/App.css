@@ -204,6 +204,15 @@ background:#fff !important;
     text-align: right;
 }
 
+/* FHHeaderMenu */
+.fhheadermenu{
+  width: 100% !important;
+  justify-content: center !important; 
+  /* justify */
+  font-size: large;
+  font-weight: bold;
+}
+
 
 /* FHBasket */
 
@@ -218,6 +227,7 @@ background:#fff !important;
 .fhcarousel{
   width: 100% !important;
   justify-content: center !important; 
+  margin-bottom: 10px !important;
   /* justify */
 }
 
