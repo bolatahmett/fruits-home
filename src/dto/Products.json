@@ -1,142 +1,241 @@
-[
-    {
-        "ImageUrl": "tomatoes.jpeg",
-        "AltInfo": "tomatoes",
-        "Title": "помидоры",
-        "Description": "подробное объяснение",
-        "Price": "20рубль",
-        "StockStatus": "1",
-        "ProductType": "vegetable",
-        "ProductCode": "tomatoes"
-    },
-    {
-        "ImageUrl": "orange.jpg",
-        "AltInfo": "example",
-        "Title": "оранжевый",
-        "Description": "подробное объяснение",
-        "Price": "20рубль",
-        "StockStatus": "1",
-        "ProductType": "fruit",
-        "ProductCode": "orange"
-    },
-    {
-        "ImageUrl": "potato.jpg",
-        "AltInfo": "potato",
-        "Title": "картофель",
-        "Description": "подробное объяснение",
-        "Price": "26рубль",
-        "StockStatus": "1",
-        "ProductType": "fruit",
-        "ProductCode": "potato"
-    },
-    {
-        "ImageUrl": "onion.jpg",
-        "AltInfo": "onion",
-        "Title": "лук",
-        "Description": "подробное объяснение",
-        "Price": "26рубль",
-        "StockStatus": "1",
-        "ProductType": "fruit",
-        "ProductCode": "onion"
-    },
-    {
-        "ImageUrl": "garlic.jpg",
-        "AltInfo": "garlic",
-        "Title": "чеснок",
-        "Description": "подробное объяснение",
-        "Price": "26рубль",
-        "StockStatus": "1",
-        "ProductType": "fruit",
-        "ProductCode": "garlic"
-    },
-    {
-        "ImageUrl": "leek.jpg",
-        "AltInfo": "leek",
-        "Title": "лук-порей",
-        "Description": "подробное объяснение",
-        "Price": "20рубль",
-        "StockStatus": "1",
-        "ProductType": "vegetable",
-        "ProductCode": "leek"
-    },
-    {
-        "ImageUrl": "carrot.jpg",
-        "AltInfo": "carrot",
-        "Title": "морковь",
-        "Description": "подробное объяснение",
-        "Price": "20рубль",
-        "StockStatus": "1",
-        "ProductType": "vegetable",
-        "ProductCode": "carrot"
-    },
-    {
-        "ImageUrl": "grapefruit.jpg",
-        "AltInfo": "example",
-        "Title": "помидоры",
-        "Description": "подробное объяснение",
-        "Price": "20рубль",
-        "StockStatus": "1",
-        "ProductType": "fruit",
-        "ProductCode": "grapefruit"
-    },
-    {
-        "ImageUrl": "strawberry.jpg",
-        "AltInfo": "example",
-        "Title": "оранжевый",
-        "Description": "подробное объяснение",
-        "Price": "20рубль",
-        "StockStatus": "1",
-        "ProductType": "fruit",
-        "ProductCode": "strawberry"
-    },
-    {
-        "ImageUrl": "pepper.jpg",
-        "AltInfo": "pepper",
-        "Title": "перец",
-        "Description": "подробное объяснение",
-        "Price": "26рубль",
-        "StockStatus": "1",
-        "ProductType": "fruit",
-        "ProductCode": "pepper"
-    },
-    {
-        "ImageUrl": "cucumber.jpeg",
-        "AltInfo": "cucumber",
-        "Title": "огурец",
-        "Description": "подробное объяснение",
-        "Price": "26рубль",
-        "StockStatus": "1",
-        "ProductType": "fruit",
-        "ProductCode": "cucumber"
-    },
-    {
-        "ImageUrl": "eggplant.jpg",
-        "AltInfo": "eggplant",
-        "Title": "баклажан",
-        "Description": "подробное объяснение",
-        "Price": "26рубль",
-        "StockStatus": "1",
-        "ProductType": "fruit",
-        "ProductCode": "eggplant"
-    },
-    {
-        "ImageUrl": "cabbage.jpg",
-        "AltInfo": "cabbage",
-        "Title": "капуста",
-        "Description": "подробное объяснение",
-        "Price": "20рубль",
-        "StockStatus": "1",
-        "ProductType": "vegetable",
-        "ProductCode": "cabbage"
-    },
-    {
-        "ImageUrl": "spinach.jpg",
-        "AltInfo": "spinach",
-        "Title": "шпинат",
-        "Description": "подробное объяснение",
-        "Price": "20рубль",
-        "StockStatus": "1",
-        "ProductType": "vegetable",
-        "ProductCode": "spinach"
-    }
-]
+[{
+ 
+  "ImageUrl": "tomatoes.jpeg",
+  "AltInfo": "tomatoes",
+  "Title": "помидоры",
+  "Description": "подробное объяснение",
+  "Price": "20",
+  "StockStatus": "1",
+  "ProductType": "vegetable",
+  "ProductCode": "tomatoes",
+  "Status": "",
+  "IsExoticFruits": false,
+  "IsCitrus": false,
+  "IsOrganic": true,
+  "IsSeasonalVegetables": false,
+  "IsGreens": false
+},{
+ 
+  "ImageUrl": "orange.jpg",
+  "AltInfo": "example",
+  "Title": "оранжевый",
+  "Description": "подробное объяснение",
+  "Price": "30",
+  "StockStatus": "1",
+  "ProductType": "fruit",
+  "ProductCode": "orange",
+  "Status": "",
+  "IsExoticFruits": false,
+  "IsCitrus": false,
+  "IsOrganic": true,
+  "IsSeasonalVegetables": false,
+  "IsGreens": false
+},{
+ 
+  "ImageUrl": "potato.jpg",
+  "AltInfo": "potato",
+  "Title": "картофель",
+  "Description": "подробное объяснение",
+  "Price": "26",
+  "StockStatus": "1",
+  "ProductType": "fruit",
+  "ProductCode": "potato",
+  "Status": "",
+  "IsExoticFruits": false,
+  "IsCitrus": false,
+  "IsOrganic": true,
+  "IsSeasonalVegetables": false,
+  "IsGreens": false
+},{
+ 
+  "ImageUrl": "onion.jpg",
+  "AltInfo": "onion",
+  "Title": "лук",
+  "Description": "подробное объяснение",
+  "Price": "50",
+  "StockStatus": "1",
+  "ProductType": "fruit",
+  "ProductCode": "onion",
+  "Status": "",
+  "IsExoticFruits": false,
+  "IsCitrus": false,
+  "IsOrganic": true,
+  "IsSeasonalVegetables": false,
+  "IsGreens": false
+},{
+   
+  "ImageUrl": "garlic.jpg",
+  "AltInfo": "garlic",
+  "Title": "чеснок",
+  "Description": "подробное объяснение",
+  "Price": "70",
+  "StockStatus": "1",
+  "ProductType": "fruit",
+  "ProductCode": "garlic",
+  "Status": "",
+  "IsExoticFruits": false,
+  "IsCitrus": false,
+  "IsOrganic": true,
+  "IsSeasonalVegetables": false,
+  "IsGreens": false
+},{
+  
+  "ImageUrl": "leek.jpg",
+  "AltInfo": "leek",
+  "Title": "лук-порей",
+  "Description": "подробное объяснение",
+  "Price": "15",
+  "StockStatus": "1",
+  "ProductType": "vegetable",
+  "ProductCode": "leek",
+  "Status": "",
+  "IsExoticFruits": false,
+  "IsCitrus": false,
+  "IsOrganic": true,
+  "IsSeasonalVegetables": false,
+  "IsGreens": false
+},{
+ 
+  "ImageUrl": "carrot.jpg",
+  "AltInfo": "carrot",
+  "Title": "морковь",
+  "Description": "подробное объяснение",
+  "Price": "16",
+  "StockStatus": "1",
+  "ProductType": "vegetable",
+  "ProductCode": "carrot",
+  "Status": "",
+  "IsExoticFruits": false,
+  "IsCitrus": false,
+  "IsOrganic": true,
+  "IsSeasonalVegetables": false,
+  "IsGreens": false
+},{
+ 
+  "ImageUrl": "grapefruit.jpg",
+  "AltInfo": "example",
+  "Title": "помидоры",
+  "Description": "подробное объяснение",
+  "Price": "20",
+  "StockStatus": "1",
+  "ProductType": "fruit",
+  "ProductCode": "grapefruit",
+  "Status": "",
+  "IsExoticFruits": false,
+  "IsCitrus": false,
+  "IsOrganic": true,
+  "IsSeasonalVegetables": false,
+  "IsGreens": false
+},{
+  
+  "ImageUrl": "strawberry.jpg",
+  "AltInfo": "example",
+  "Title": "оранжевый",
+  "Description": "подробное объяснение",
+  "Price": "100",
+  "StockStatus": "1",
+  "ProductType": "fruit",
+  "ProductCode": "strawberry",
+  "Status": "",
+  "IsExoticFruits": false,
+  "IsCitrus": false,
+  "IsOrganic": true,
+  "IsSeasonalVegetables": false,
+  "IsGreens": false
+},{
+ 
+  "ImageUrl": "pepper.jpg",
+  "AltInfo": "pepper",
+  "Title": "перец",
+  "Description": "подробное объяснение",
+  "Price": "120",
+  "StockStatus": "1",
+  "ProductType": "fruit",
+  "ProductCode": "pepper",
+  "Status": "",
+  "IsExoticFruits": false,
+  "IsCitrus": false,
+  "IsOrganic": true,
+  "IsSeasonalVegetables": false,
+  "IsGreens": false
+},{
+ 
+  "ImageUrl": "cucumber.jpeg",
+  "AltInfo": "cucumber",
+  "Title": "огурец",
+  "Description": "подробное объяснение",
+  "Price": "30",
+  "StockStatus": "1",
+  "ProductType": "fruit",
+  "ProductCode": "cucumber",
+  "Status": "",
+  "IsExoticFruits": false,
+  "IsCitrus": false,
+  "IsOrganic": true,
+  "IsSeasonalVegetables": false,
+  "IsGreens": false
+},{
+ 
+  "ImageUrl": "eggplant.jpg",
+  "AltInfo": "eggplant",
+  "Title": "баклажан",
+  "Description": "подробное объяснение",
+  "Price": "20",
+  "StockStatus": "1",
+  "ProductType": "fruit",
+  "ProductCode": "eggplant",
+  "Status": "",
+  "IsExoticFruits": false,
+  "IsCitrus": false,
+  "IsOrganic": true,
+  "IsSeasonalVegetables": false,
+  "IsGreens": false
+},{
+ 
+  "ImageUrl": "cabbage.jpg",
+  "AltInfo": "cabbage",
+  "Title": "капуста",
+  "Description": "подробное объяснение",
+  "Price": "5",
+  "StockStatus": "1",
+  "ProductType": "vegetable",
+  "ProductCode": "cabbage",
+  "Status": "",
+  "IsExoticFruits": false,
+  "IsCitrus": false,
+  "IsOrganic": true,
+  "IsSeasonalVegetables": false,
+  "IsGreens": false
+},{
+ 
+  "ImageUrl": "",
+  "AltInfo": "Dkdkdkd",
+  "Title": "Ajsjsjssj",
+  "Description": "Test fememe",
+  "Price": "1000",
+  "StockStatus": "1",
+  "ProductType": "fruit",
+  "ProductCode": "Cucumber",
+  "Status": "",
+  "IsExoticFruits": false,
+  "IsCitrus": false,
+  "IsOrganic": true,
+  "IsSeasonalVegetables": false,
+  "IsGreens": false
+},{
+ 
+  "ImageUrl": "spinach.jpg",
+  "AltInfo": "spinach",
+  "Title": "шпинат",
+  "Description": "подробное объяснение",
+  "Price": "10",
+  "StockStatus": "1",
+  "ProductType": "vegetable",
+  "ProductCode": "spinach",
+  "Status": "",
+  "IsExoticFruits": false,
+  "IsCitrus": false,
+  "IsOrganic": true,
+  "IsSeasonalVegetables": false,
+  "IsGreens": false
+}]

@@ -44,8 +44,8 @@
 }
 .ant-layout-header{
    background-color: #fff !important;
-   height: 260px !important;
-  padding: 0 0px !important;
+   height: 300px !important;
+   padding: 0 0px !important;
 }
 .ant-layout-footer {
   background: #7dbcea;
@@ -73,7 +73,7 @@ background:#fff !important;
 .ant-layout-content {
   background: #fff;
   color: #fff;
-  min-height: 720px;
+  min-height: 720px !important;
   line-height: 120px;
 }
 [data-theme="dark"] .ant-layout-content {
@@ -228,6 +228,7 @@ background:#fff !important;
   width: 100% !important;
   justify-content: center !important; 
   margin-bottom: 10px !important;
+  margin-top: 10px !important;
   /* justify */
 }
 
@@ -252,3 +253,16 @@ background:#fff !important;
   width: 100% !important;
   text-align: center !important;
 }
+
+
+/* main page text*/
+.main-page-text h2 {
+  color: black;
+  -webkit-text-fill-color: white; /* Will override color (regardless of order) */
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: black;
+  font-style: oblique;
+  font-family: cursive;
+}
+
+ 

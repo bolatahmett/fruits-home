@@ -10,8 +10,8 @@ export default class Home extends Component {
         return (
             <>
                 <FHCarousel />
-                <FHContent />
-                {/* <FHMainContent></FHMainContent> */}
+                {/* <FHContent /> */}
+                <FHMainContent />
             </>
         )
     }

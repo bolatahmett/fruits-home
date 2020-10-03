@@ -7,6 +7,7 @@ import FHEditContent from '../components/FHEditContent';
 import { handlePopup } from './../redux/actions/actions';
 import { PlusOutlined } from '@ant-design/icons';
 import { addItem, getAllItems, removeItem, getItem } from '../dto/ServerHelper';
+import { debug } from 'console';
 
 export const EditContent = (props: any) => {
 
@@ -25,6 +26,7 @@ export const EditContent = (props: any) => {
 
     const getProductItems = async () => {
         const result = await getAllItems() as ContentCard[];
+        debugger;
         setProductItems(result);
         setSpinTip("");
     };

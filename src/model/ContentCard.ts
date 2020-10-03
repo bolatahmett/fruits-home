@@ -8,4 +8,9 @@ export interface ContentCard {
     ProductType: string;
     ProductCode: string;
     Status: string;
+    IsExoticFruits: boolean;
+    IsCitrus: boolean;
+    IsOrganic: boolean;
+    IsSeasonalVegetables: boolean;
+    IsGreens: boolean;
 }

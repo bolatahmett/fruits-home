@@ -1,25 +1,23 @@
 import React, { useState } from 'react'
 import { useTranslation } from 'react-i18next'
-import { Radio, Dropdown, Menu, Button } from 'antd'
+import { Radio, Dropdown, Menu, Button, Row, Col } from 'antd'
 import LanguageSelector from './LanguageSelector';
 import { SearchOutlined } from '@ant-design/icons';
 
 const FHLeftHeader = (props: any) => {
     return (
-        <Menu mode={"horizontal"} inlineIndent={0}>
-            <Menu.Item key="language">
+        <Row>
+            <Col span={10}>
                 <LanguageSelector></LanguageSelector>
-            </Menu.Item>
-            <Menu.Item key="search" onClick={() => {
-                props.setSearchVisible(!props.searchVisible);
-            }}>
-
-                <a href="#">
+            </Col>
+            <Col span={10}>
+                <a href="#" onClick={() => {
+                    props.setSearchVisible(!props.searchVisible);
+                }}>
                     <img src={require("./../images/search.png")} />
                 </a>
-            </Menu.Item>
-
-        </Menu>
+            </Col>
+        </Row>
     );
 }
 

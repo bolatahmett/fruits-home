@@ -41,9 +41,8 @@
     "aboutus": "HAKKIMIZDA",
     "header.menu.exoticfruits": "Ekzotik Meyve",
     "header.menu.citrus": "Narenciye",
-    "header.menu.organicfruits": "Organik Meyveler",
-    "header.menu.seasonalvegetables": "Mevsim Sebzeler",
-    "header.menu.organicvegetables": "Organik Sebzeler",
+    "header.menu.organic": "Organik",
+    "header.menu.seasonalvegetables": "Mevsim Sebze",
     "header.menu.greens": "Yesillik",
     "header.menu.potatoesonionsandgarlic": "Patates, soğanve sarımsak"
 }
