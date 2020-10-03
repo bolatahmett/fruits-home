@@ -24,38 +24,19 @@ function FHContent(props: any) {
 
     const ContentCardItems: ContentCard[] = productItems as unknown as ContentCard[];
     const defaultContent: React.ReactNode = ContentCardItems && ContentCardItems.length > 0 && ContentCardItems.map((item: any, index: number) => {
-        if (index % 2 !== 0)
-            return <></>;
-        let cardItemL = ContentCardItems[index]
-        let cardItemR = ContentCardItems[index + 1];
-
-        if (cardItemR === undefined) {
-            return (<>
-                <Row className={"fhcontent"}>
-                    <Col xs={24} sm={24} md={11} lg={8} xl={9}>
-                        <FHContentCard imageUrl={cardItemL.ImageUrl} altInfo={cardItemL.AltInfo} title={cardItemL.Title} description={cardItemL.Description} price={cardItemL.Price} stockStatus={cardItemL.StockStatus} productCode={cardItemL.ProductCode} productType={cardItemL.ProductType}></FHContentCard>
-                    </Col>
-                </Row>
-                <p></p>
-            </>)
-        } else {
-            return (<>
-                <Row className={"fhcontent"}>
-                    <Col xs={24} sm={24} md={11} lg={8} xl={9}>
-                        <FHContentCard imageUrl={cardItemL.ImageUrl} altInfo={cardItemL.AltInfo} title={cardItemL.Title} description={cardItemL.Description} price={cardItemL.Price} stockStatus={cardItemL.StockStatus} productCode={cardItemL.ProductCode} productType={cardItemL.ProductType}></FHContentCard>
-                    </Col>
-                    <Col xs={24} sm={24} md={11} lg={8} xl={9}>
-                        <FHContentCard imageUrl={cardItemR.ImageUrl} altInfo={cardItemR.AltInfo} title={cardItemR.Title} description={cardItemR.Description} price={cardItemR.Price} stockStatus={cardItemR.StockStatus} productCode={cardItemR.ProductCode} productType={cardItemR.ProductType}></FHContentCard>
-                    </Col>
-                </Row>
-                <p></p>
-            </>)
-        }
+        return (
+            < Col xs={24} sm={24} md={11} lg={6} xl={6} >
+                <FHContentCard imageUrl={item.ImageUrl} altInfo={item.AltInfo} title={item.Title} description={item.Description} price={item.Price} stockStatus={item.StockStatus} productCode={item.ProductCode} productType={item.ProductType}></FHContentCard>
+            </Col>
+        )
     });
 
     return <>
         <Spin spinning={spinTip !== ""} tip={spinTip} size={"large"}> {
-            defaultContent
+            <Row className={"fhcontent"}>
+                {defaultContent}
+            </Row>
+
         } </Spin>
     </>
 }

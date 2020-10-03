@@ -28,7 +28,7 @@ export const FHMainContent = () => {
                                 hoverable
                                 cover={<img alt="example" src={require(`./../images/fruit.jpeg`)} style={{ height: "120px", margin: "auto", objectFit: "contain" }} />}
                                 onMouseOver={() => setSisibleDetails(true)}
-                                onClick={() => setSisibleDetails(true)}
+                                onClick={() => setSisibleDetails(!visibleDetails)}
                             >
                                 <Meta title={t("fruits")} description="taze misss :)" />
                             </Card>
@@ -61,6 +61,13 @@ export const FHMainContent = () => {
                     </Row>
                     <Row>
                         <Col>
+                            {visibleDetails && <h2 className={"main-page-text"}>
+                                {t("fruits")}
+                            </h2>}
+                        </Col>
+                    </Row>
+                    <Row>
+                        <Col xs={24} sm={24} md={24} lg={24} xl={24}>
                             {visibleDetails && <FHContent></FHContent>}
                         </Col>
                     </Row>
