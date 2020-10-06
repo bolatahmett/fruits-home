@@ -9,7 +9,7 @@ import FHContent from './FHContent';
 
 export const FHMainContent = () => {
     const { t } = useTranslation();
-    const [visibleDetails, setSisibleDetails] = useState(false)
+    const [contentDetail, setContentDetail] = useState({ ProductCode: "", ProductType: "Nothing" } as any)
     return (
         <>
             <Row justify="center" style={{ minHeight: "900px" }}>
@@ -27,8 +27,7 @@ export const FHMainContent = () => {
                             <Card
                                 hoverable
                                 cover={<img alt="example" src={require(`./../images/fruit.jpeg`)} style={{ height: "120px", margin: "auto", objectFit: "contain" }} />}
-                                onMouseOver={() => setSisibleDetails(true)}
-                                onClick={() => setSisibleDetails(!visibleDetails)}
+                                onClick={() => setContentDetail({ ProductType: "fruit" })}
                             >
                                 <Meta title={t("fruits")} description="taze misss :)" />
                             </Card>
@@ -38,6 +37,7 @@ export const FHMainContent = () => {
                             <Card
                                 hoverable
                                 cover={<img alt="example" src={require(`./../images/vegatabels-mix.jpeg`)} style={{ height: "120px", margin: "auto", objectFit: "contain" }} />}
+                                onClick={() => setContentDetail({ ProductType: "vegetable" })}
                             >
                                 <Meta title={t("vegetable")} description="taze misss :)" />
                             </Card>
@@ -46,6 +46,7 @@ export const FHMainContent = () => {
                             <Card
                                 hoverable
                                 cover={<img alt="example" src={require(`./../images/citrus.jpg`)} style={{ height: "120px", margin: "auto", objectFit: "contain" }} />}
+                                onClick={() => setContentDetail({ IsCitrus: true })}
                             >
                                 <Meta title={t("header.menu.citrus")} description="taze misss :)" />
                             </Card>
@@ -54,23 +55,19 @@ export const FHMainContent = () => {
                             <Card
                                 hoverable
                                 cover={<img alt="example" src={require(`./../images/imported.jpg`)} style={{ height: "120px", margin: "auto", objectFit: "contain" }} />}
+                                onClick={() => setContentDetail({ IsExoticFruits: true })}
                             >
                                 <Meta title={t("header.menu.exoticfruits")} description="taze misss :)" />
                             </Card>
                         </Col>
                     </Row>
-                    <Row>
-                        <Col>
-                            {visibleDetails && <h2 className={"main-page-text"}>
-                                {t("fruits")}
-                            </h2>}
-                        </Col>
-                    </Row>
+                    <Divider></Divider>
                     <Row>
                         <Col xs={24} sm={24} md={24} lg={24} xl={24}>
-                            {visibleDetails && <FHContent></FHContent>}
+                            {<FHContent query={contentDetail}></FHContent>}
                         </Col>
                     </Row>
+                    <Divider></Divider>
                     <Row>
                         <Col>
                             <h2 className={"main-page-text"}>

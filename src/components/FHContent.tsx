@@ -3,7 +3,7 @@ import { Row, Col, Spin } from 'antd';
 import FHContentCard from './FHContentCard';
 import { connect } from 'react-redux';
 import { ContentCard } from '../model/ContentCard';
-import { getAllItems } from '../dto/ServerHelper';
+import { getAllItems, getItem } from '../dto/ServerHelper';
 
 function FHContent(props: any) {
 
@@ -11,13 +11,14 @@ function FHContent(props: any) {
     const [spinTip, setSpinTip] = useState("Loading...");
 
     useEffect(() => {
-        if (productItems && productItems.length === 0) {
-            getProductItems();
-        }
-    }, [productItems]);
+        debugger;
+
+        getProductItems();
+
+    }, [props.query]);
 
     const getProductItems = async () => {
-        const result = await getAllItems() as ContentCard[];
+        const result = await getItem(props.query) as ContentCard[];
         setProductItems(result);
         setSpinTip("");
     };
