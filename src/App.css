@@ -241,6 +241,7 @@ background:#fff !important;
 .fhcontent {
   justify-content: center !important;
   align-content: center !important;
+  margin: 10px;
   /* justify="center" align="middle" */
 }
 
@@ -251,7 +252,7 @@ background:#fff !important;
 /* fhcontentcard */
 .fhcontentcard-meta {
   width: 100% !important;
-  text-align: center !important;
+  text-align: left !important;
 }
 
 

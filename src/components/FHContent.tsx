@@ -18,6 +18,7 @@ function FHContent(props: any) {
     }, [props.query]);
 
     const getProductItems = async () => {
+        setSpinTip("Loading...");
         const result = await getItem(props.query) as ContentCard[];
         setProductItems(result);
         setSpinTip("");
@@ -26,18 +27,17 @@ function FHContent(props: any) {
     const ContentCardItems: ContentCard[] = productItems as unknown as ContentCard[];
     const defaultContent: React.ReactNode = ContentCardItems && ContentCardItems.length > 0 && ContentCardItems.map((item: any, index: number) => {
         return (
-            < Col xs={24} sm={24} md={11} lg={6} xl={6} >
-                <FHContentCard imageUrl={item.ImageUrl} altInfo={item.AltInfo} title={item.Title} description={item.Description} price={item.Price} stockStatus={item.StockStatus} productCode={item.ProductCode} productType={item.ProductType}></FHContentCard>
-            </Col>
+            <Row className={"fhcontent"}>
+                < Col xs={24} sm={24} md={18} lg={18} xl={18} >
+                    <FHContentCard imageUrl={item.ImageUrl} altInfo={item.AltInfo} title={item.Title} description={item.Description} price={item.Price} stockStatus={item.StockStatus} productCode={item.ProductCode} productType={item.ProductType}></FHContentCard>
+                </Col>
+            </Row>
         )
     });
 
     return <>
         <Spin spinning={spinTip !== ""} tip={spinTip} size={"large"}> {
-            <Row className={"fhcontent"}>
-                {defaultContent}
-            </Row>
-
+            defaultContent
         } </Spin>
     </>
 }

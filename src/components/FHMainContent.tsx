@@ -3,13 +3,17 @@ import { connect } from 'react-redux';
 import FHCarousel from './FHCarousel';
 import { useTranslation } from 'react-i18next';
 import { Link } from "react-router-dom";
-import { Divider, Space, Row, Col, Carousel, Card } from 'antd';
+import { Divider, Space, Row, Col, Carousel, Card, Button } from 'antd';
 import Meta from 'antd/lib/card/Meta';
 import FHContent from './FHContent';
+import {
+    CloseOutlined
+} from '@ant-design/icons';
 
 export const FHMainContent = () => {
     const { t } = useTranslation();
-    const [contentDetail, setContentDetail] = useState({ ProductCode: "", ProductType: "Nothing" } as any)
+    const [contentDetail, setContentDetail] = useState(undefined as any);
+    const [title, setTitle] = useState("");
     return (
         <>
             <Row justify="center" style={{ minHeight: "900px" }}>
@@ -27,7 +31,7 @@ export const FHMainContent = () => {
                             <Card
                                 hoverable
                                 cover={<img alt="example" src={require(`./../images/fruit.jpeg`)} style={{ height: "120px", margin: "auto", objectFit: "contain" }} />}
-                                onClick={() => setContentDetail({ ProductType: "fruit" })}
+                                onClick={() => { setContentDetail({ ProductType: "fruit" }); setTitle(t("fruits")); }}
                             >
                                 <Meta title={t("fruits")} description="taze misss :)" />
                             </Card>
@@ -37,7 +41,7 @@ export const FHMainContent = () => {
                             <Card
                                 hoverable
                                 cover={<img alt="example" src={require(`./../images/vegatabels-mix.jpeg`)} style={{ height: "120px", margin: "auto", objectFit: "contain" }} />}
-                                onClick={() => setContentDetail({ ProductType: "vegetable" })}
+                                onClick={() => { setContentDetail({ ProductType: "vegetable" }); setTitle(t("vegetable")); }}
                             >
                                 <Meta title={t("vegetable")} description="taze misss :)" />
                             </Card>
@@ -46,7 +50,7 @@ export const FHMainContent = () => {
                             <Card
                                 hoverable
                                 cover={<img alt="example" src={require(`./../images/citrus.jpg`)} style={{ height: "120px", margin: "auto", objectFit: "contain" }} />}
-                                onClick={() => setContentDetail({ IsCitrus: true })}
+                                onClick={() => { setContentDetail({ IsCitrus: true }); setTitle(t("header.menu.citrus")); }}
                             >
                                 <Meta title={t("header.menu.citrus")} description="taze misss :)" />
                             </Card>
@@ -55,16 +59,25 @@ export const FHMainContent = () => {
                             <Card
                                 hoverable
                                 cover={<img alt="example" src={require(`./../images/imported.jpg`)} style={{ height: "120px", margin: "auto", objectFit: "contain" }} />}
-                                onClick={() => setContentDetail({ IsExoticFruits: true })}
+                                onClick={() => { setContentDetail({ IsExoticFruits: true }); setTitle(t("header.menu.exoticfruits")); }}
                             >
                                 <Meta title={t("header.menu.exoticfruits")} description="taze misss :)" />
                             </Card>
                         </Col>
                     </Row>
                     <Divider></Divider>
-                    <Row>
+                    <Row >
+
+                        <Col span={16}>
+                            <h3 style={{ textAlign: "center" }}>
+                                {title !== "" && title}
+                            </h3>
+                        </Col>
+                        <Col span={2}>
+                            {title !== "" && <Button danger shape="circle" size="small" onClick={() => { setContentDetail(undefined); setTitle(t("")); }}><CloseOutlined /></Button>}
+                        </Col>
                         <Col xs={24} sm={24} md={24} lg={24} xl={24}>
-                            {<FHContent query={contentDetail}></FHContent>}
+                            {contentDetail === undefined ? <></> : <FHContent query={contentDetail}></FHContent>}
                         </Col>
                     </Row>
                     <Divider></Divider>
