@@ -1,3 +1,4 @@
+import { query } from "express"
 import { Product } from "../../model/Product"
 import { User } from "../../model/User"
 
@@ -33,4 +34,9 @@ export const exitUser = () => ({
 export const handlePopup = (visible: boolean) => ({
     type: 'OK',
     handleOk: visible
+})
+
+export const setProductOnHomePage = (query: {}) => ({
+    type: 'HOME_PAGE_PRODUCT',
+    query: query
 })

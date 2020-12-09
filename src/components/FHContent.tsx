@@ -4,6 +4,8 @@ import FHContentCard from './FHContentCard';
 import { connect } from 'react-redux';
 import { ContentCard } from '../model/ContentCard';
 import { getAllItems, getItem } from '../dto/ServerHelper';
+import FHContentCarousel from './FHContentCarousel';
+import uuidv4 from 'uuid'
 
 function FHContent(props: any) {
 
@@ -11,10 +13,7 @@ function FHContent(props: any) {
     const [spinTip, setSpinTip] = useState("Loading...");
 
     useEffect(() => {
-        debugger;
-
         getProductItems();
-
     }, [props.query]);
 
     const getProductItems = async () => {
@@ -25,20 +24,30 @@ function FHContent(props: any) {
     };
 
     const ContentCardItems: ContentCard[] = productItems as unknown as ContentCard[];
-    const defaultContent: React.ReactNode = ContentCardItems && ContentCardItems.length > 0 && ContentCardItems.map((item: any, index: number) => {
-        return (
-            <Row className={"fhcontent"}>
-                < Col xs={24} sm={24} md={18} lg={18} xl={18} >
-                    <FHContentCard imageUrl={item.ImageUrl} altInfo={item.AltInfo} title={item.Title} description={item.Description} price={item.Price} stockStatus={item.StockStatus} productCode={item.ProductCode} productType={item.ProductType}></FHContentCard>
-                </Col>
-            </Row>
-        )
-    });
+    let defaultContent: React.ReactNode = <></>;
+    if (props.type === "carousel") {
+        defaultContent = <FHContentCarousel items={ContentCardItems} id={uuidv4.v4()}></FHContentCarousel>;
+    } else {
+        defaultContent = ContentCardItems && ContentCardItems.length > 0 && ContentCardItems.map((item: any, index: number) => {
+            return (
+                <Row className={"fhcontent"}>
+                    <Col xs={24} sm={24} md={props.span} lg={props.span} xl={props.span} >
+                        <FHContentCard imageUrl={item.ImageUrl} altInfo={item.AltInfo} title={item.Title} description={item.Description} price={item.Price} stockStatus={item.StockStatus} productCode={item.ProductCode} productType={item.ProductType}></FHContentCard>
+                    </Col>
+                </Row>
+            )
+        });
+    }
 
     return <>
-        <Spin spinning={spinTip !== ""} tip={spinTip} size={"large"}> {
-            defaultContent
-        } </Spin>
+        <Row style={{ marginTop: "40px", marginBottom: "20px" }}>
+            <Col>
+                <Spin spinning={spinTip !== ""} tip={spinTip} size={"large"}> {
+                    defaultContent
+                } </Spin>
+            </Col>
+        </Row>
+
     </>
 }
 

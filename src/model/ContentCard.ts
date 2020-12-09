@@ -13,4 +13,6 @@ export interface ContentCard {
     IsOrganic: boolean;
     IsSeasonalVegetables: boolean;
     IsGreens: boolean;
+    IsOpportunity: boolean;
+    IsHighTrend: boolean;
 }

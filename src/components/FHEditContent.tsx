@@ -63,6 +63,12 @@ function FHEditContent(props: FHEditContentProps) {
                 <Form.Item name="IsGreens" label={t("header.menu.greens")} valuePropName="checked">
                     <Checkbox />
                 </Form.Item>
+                <Form.Item name="IsOpportunity" label={t("header.menu.opportunity")} valuePropName="checked">
+                    <Checkbox />
+                </Form.Item>
+                <Form.Item name="IsHighTrend" label={t("header.menu.highTrend")} valuePropName="checked">
+                    <Checkbox />
+                </Form.Item>
                 <Form.Item name="StockStatus" label="StockStatus">
                     <Select>
                         <Select.Option value="1">Stokta Ürün Var</Select.Option>
