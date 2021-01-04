@@ -11,6 +11,7 @@ import {
 } from '@ant-design/icons';
 import { setProductOnHomePage } from './../redux/actions/actions';
 import { isEmpty, isUndefined } from 'lodash';
+import OpportunityAndHighTrend from './OpportunityAndHighTrend';
 
 function FHMainContent(props: any) {
     const { t } = useTranslation();
@@ -20,9 +21,10 @@ function FHMainContent(props: any) {
     useEffect(() => {
         if (!isEmpty(props.query)) {
             setContentDetail(props.query);
+            setTitle(t(props.title));
             document.getElementById("FHMainContent")!.scrollIntoView();
         }
-    });
+    }, [title]);
 
     return (
         <>
@@ -89,23 +91,7 @@ function FHMainContent(props: any) {
                             {isUndefined(contentDetail) ? <></> : <FHContent query={contentDetail} span={24}></FHContent>}
                         </Col>
                     </Row>
-                    <Divider></Divider>
-                    <Row>
-                        <Col>
-                            <h3 className={"main-page-text"}>
-                                Fırsatlar
-                            </h3>
-                        </Col>
-                    </Row>
-                    <FHContent query={{ IsOpportunity: true }} span={6} type="carousel"></FHContent>
-                    <Row>
-                        <Col>
-                            <h3 className={"main-page-text"}>
-                                Çok Satanlar
-                            </h3>
-                        </Col>
-                    </Row>
-                    <FHContent query={{ IsHighTrend: true }} span={18} type="carousel"></FHContent>
+                    <OpportunityAndHighTrend></OpportunityAndHighTrend>
                 </Col>
             </Row>
         </>
@@ -114,7 +100,8 @@ function FHMainContent(props: any) {
 
 const mapStateToProps = (state: any) => {
     const query = state.homeProduct.query;
-    return { query };
+    const title = state.homeProduct.title;
+    return { query, title };
 };
 
 const mapDispatchToProps = {
