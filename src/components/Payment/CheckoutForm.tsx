@@ -10,7 +10,6 @@ import { connect } from 'react-redux';
 import ExtractOfAccount from '../ExtractOfAccount';
 import { Product } from '../../model/Product';
 import { User } from '../../model/User';
-import { Route } from 'react-router-dom';
 
 function CheckoutForm(props: any) {
     const stripe = useStripe();

@@ -1,6 +1,6 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState } from 'react'
 import { connect } from 'react-redux';
-import { List, Avatar, Button, Row, Col, Steps, Result, Divider, message, Input } from 'antd';
+import { List, Avatar, Button, Row, Col, Steps, Divider, message, Input } from 'antd';
 import { Product } from '../model/Product';
 import { addToBasket } from './../redux/actions/actions';
 import ExtractOfAccount from '../components/ExtractOfAccount';
@@ -8,7 +8,7 @@ import { useTranslation } from 'react-i18next';
 import CheckoutForm from '../components/Payment/CheckoutForm';
 import { loadStripe } from '@stripe/stripe-js';
 import { Elements } from '@stripe/react-stripe-js';
-import { Typography, Space } from 'antd';
+import { Typography } from 'antd';
 
 const { Text } = Typography;
 const { Step } = Steps;
@@ -62,7 +62,7 @@ function BasketResult(props: any) {
                 renderItem={(product: Product) => (
                     <List.Item
                         actions={[
-                            <Button type="ghost" shape="circle" disabled={product.Quantity == 0} onClick={() => decreaseProductQuantity(product)}>-</Button>,
+                            <Button type="ghost" shape="circle" disabled={product.Quantity === 0} onClick={() => decreaseProductQuantity(product)}>-</Button>,
                             <Button type="ghost" shape="circle" onClick={() => increaseProductQuantity(product)}>+</Button>
                         ]}>
 

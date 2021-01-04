@@ -1,10 +1,9 @@
 import React, { useState } from 'react'
 import { useTranslation } from 'react-i18next'
-import { Radio, Dropdown, Menu } from 'antd'
-import { DownOutlined } from '@ant-design/icons';
+import { Dropdown, Menu } from 'antd'
 
 const LanguageSelector = () => {
-    const { t, i18n } = useTranslation()
+    const { i18n } = useTranslation()
 
     const [lang, setLang] = useState("tr");
 
@@ -14,7 +13,6 @@ const LanguageSelector = () => {
         setLang(value.key);
     }
 
-    const selectedStyle = { backgroundColor: "aliceblue" };
     const menu = (
         <Menu>
             <Menu.Item key="tr" onClick={e => changeLanguage(e)}>

@@ -1,9 +1,7 @@
-import React, { Component, useEffect, useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { connect } from 'react-redux';
-import FHCarousel from './FHCarousel';
 import { useTranslation } from 'react-i18next';
-import { Link } from "react-router-dom";
-import { Divider, Space, Row, Col, Carousel, Card, Button } from 'antd';
+import { Divider, Row, Col, Card, Button } from 'antd';
 import Meta from 'antd/lib/card/Meta';
 import FHContent from './FHContent';
 import {

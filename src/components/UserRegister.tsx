@@ -16,11 +16,9 @@ import {
 import { QuestionCircleOutlined } from '@ant-design/icons';
 import { addUser, getUser } from './../dto/ServerHelper';
 import { useHistory } from 'react-router-dom';
-import { debug } from 'console';
 
 
 const { Option } = Select;
-const AutoCompleteOption = AutoComplete.Option;
 
 const residences = [
     {
@@ -140,19 +138,6 @@ const RegistrationForm = () => {
     );
 
     const [autoCompleteResult, setAutoCompleteResult] = useState([]);
-
-    const onWebsiteChange = (value: any) => {
-        if (!value) {
-            setAutoCompleteResult([]);
-        } else {
-            setAutoCompleteResult(['.com', '.org', '.net'].map(domain => `${value}${domain}` as never));
-        }
-    };
-
-    const websiteOptions = autoCompleteResult.map(website => ({
-        label: website,
-        value: website,
-    }));
 
     return (
         <Spin spinning={spinTip !== ""} tip={spinTip} size={"large"}>

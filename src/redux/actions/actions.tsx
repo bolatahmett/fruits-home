@@ -1,4 +1,3 @@
-import { query } from "express"
 import { Product } from "../../model/Product"
 import { User } from "../../model/User"
 

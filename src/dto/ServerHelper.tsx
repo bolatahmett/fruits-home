@@ -1,4 +1,4 @@
-import axios, { AxiosRequestConfig } from 'axios';
+import axios from 'axios';
 
 export async function addItem(jsonQuery: any): Promise<any> {
     return await apiCall("https://fruitshome.ru/api/addItem", jsonQuery);
