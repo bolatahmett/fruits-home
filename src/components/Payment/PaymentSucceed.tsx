@@ -1,5 +1,5 @@
 import React from 'react';
-import { Result, Button } from 'antd';
+import { Result } from 'antd';
 import { useTranslation } from 'react-i18next';
 import {
     Link

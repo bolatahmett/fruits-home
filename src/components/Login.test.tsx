@@ -1,7 +1,6 @@
 import React from 'react';
 import { Login } from './Login';
-import { render, fireEvent, queryByAttribute, createEvent, getByText } from '@testing-library/react';
-import { useHistory } from 'react-router-dom';
+import { render, fireEvent, queryByAttribute } from '@testing-library/react';
 const getById = queryByAttribute.bind(null, 'id');
 const getByName = queryByAttribute.bind(null, 'name');
 jest.mock('react-router-dom', () => ({
@@ -10,7 +9,6 @@ jest.mock('react-router-dom', () => ({
     }),
 }));
 describe('Test case for testing login', () => {
-    let wrapper;
 
     beforeAll(() => {
         Object.defineProperty(window, "matchMedia", {
@@ -40,7 +38,7 @@ describe('Test case for testing login', () => {
 
 
         const submitButton = getByName(wrapper.container, 'login_button');
-        const resultLogin = fireEvent.submit(submitButton!);
+        fireEvent.submit(submitButton!);
 
         console.log(window.location.pathname);
         expect(window.location.pathname).toBe("/");

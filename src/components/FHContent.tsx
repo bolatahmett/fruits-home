@@ -3,7 +3,7 @@ import { Row, Col, Spin } from 'antd';
 import FHContentCard from './FHContentCard';
 import { connect } from 'react-redux';
 import { ContentCard } from '../model/ContentCard';
-import { getAllItems, getItem } from '../dto/ServerHelper';
+import { getItem } from '../dto/ServerHelper';
 import FHContentCarousel from './FHContentCarousel';
 import uuidv4 from 'uuid'
 

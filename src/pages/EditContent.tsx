@@ -6,15 +6,13 @@ import FHPopup from '../components/FHPopup';
 import FHEditContent from '../components/FHEditContent';
 import { handlePopup } from './../redux/actions/actions';
 import { PlusOutlined } from '@ant-design/icons';
-import { addItem, getAllItems, removeItem, getItem } from '../dto/ServerHelper';
-import { debug } from 'console';
+import { addItem, getAllItems, removeItem } from '../dto/ServerHelper';
 
 export const EditContent = (props: any) => {
 
     const [popupVisible, setPopupVisible] = useState(false);
     const [productContent, setProductContent] = useState(<></>);
     const [productItems, setProductItems] = useState([] as ContentCard[]);
-    const [productItemsCount, setProductItemsCount] = useState(0);
     const [spinTip, setSpinTip] = useState("Loading...");
 
     useEffect(() => {
@@ -65,7 +63,6 @@ export const EditContent = (props: any) => {
         }
 
         setProductItems(result);
-        setProductItemsCount(result.length);
     }
 
     const addProduct = () => {

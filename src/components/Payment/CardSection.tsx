@@ -4,8 +4,6 @@
 import React from 'react';
 import { CardElement } from '@stripe/react-stripe-js';
 import { Typography, Space } from 'antd';
-import { stringify } from 'querystring';
-
 const { Text } = Typography;
 
 const CARD_ELEMENT_OPTIONS = {

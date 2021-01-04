@@ -9,7 +9,6 @@ import {
     Col,
     Checkbox,
     Button,
-    AutoComplete,
     message,
     Spin,
 } from 'antd';
@@ -136,8 +135,6 @@ const RegistrationForm = () => {
             </Select>
         </Form.Item>
     );
-
-    const [autoCompleteResult, setAutoCompleteResult] = useState([]);
 
     return (
         <Spin spinning={spinTip !== ""} tip={spinTip} size={"large"}>

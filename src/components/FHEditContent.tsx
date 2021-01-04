@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react'
-import { Input, Form, Select, Checkbox, Row } from 'antd';
+import { Input, Form, Select, Checkbox } from 'antd';
 import { ContentCard } from '../model/ContentCard';
 import TextArea from 'antd/lib/input/TextArea';
 import { connect } from 'react-redux';

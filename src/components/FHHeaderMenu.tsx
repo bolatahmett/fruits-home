@@ -1,18 +1,14 @@
 import React, { useState } from "react";
 import {
-    BrowserRouter as Router,
-    Switch,
-    Route,
     Link
 } from "react-router-dom";
 
 import { Menu, Row, Col, Breadcrumb } from "antd";
 import SubMenu from "antd/lib/menu/SubMenu";
-import { HomeOutlined, SettingOutlined, InfoCircleOutlined, SendOutlined, DownCircleOutlined } from '@ant-design/icons';
+import { HomeOutlined, InfoCircleOutlined, DownCircleOutlined } from '@ant-design/icons';
 import { useTranslation } from "react-i18next";
 import { connect } from 'react-redux';
 import { setProductOnHomePage } from './../redux/actions/actions';
-import { debug } from "console";
 
 function FHHeaderMenu(props: any) {
 

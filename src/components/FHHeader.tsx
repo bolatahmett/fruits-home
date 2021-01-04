@@ -1,14 +1,10 @@
 import React, { useState } from "react";
-import { Row, Col, Alert, Divider, Button } from "antd";
+import { Row, Col, Alert, Button } from "antd";
 import TextLoop from 'react-text-loop';
-import FHBasket from "./FHBasket";
-import HeaderLoginButton from "./HeaderLoginButton";
-import { SearchOutlined } from '@ant-design/icons';
 import Search from "antd/lib/input/Search";
 import { Link } from "react-router-dom";
 import { connect } from "react-redux";
 import { User } from "../model/User";
-import LanguageSelector from "./LanguageSelector";
 import { useTranslation } from 'react-i18next';
 import FHHeaderMenu from "./FHHeaderMenu";
 import FHLeftHeader from "./FHLeftHeader";

@@ -1,6 +1,5 @@
 import React, { useState } from 'react'
 import { Popover, Badge, List, Avatar, Button } from 'antd'
-import { ShoppingCartOutlined } from '@ant-design/icons';
 import { connect } from 'react-redux';
 import { Product } from '../model/Product';
 import { useTranslation } from 'react-i18next';

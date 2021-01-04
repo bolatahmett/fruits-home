@@ -1,8 +1,6 @@
 import React from 'react'
-import Login from '../components/Login'
 import RegistrationForm from '../components/UserRegister'
 import { Col, Row } from 'antd'
-import { connect } from 'react-redux'
 
 function LoginPage(props: any) {
     return (
