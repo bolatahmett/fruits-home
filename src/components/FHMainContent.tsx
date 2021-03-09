@@ -22,7 +22,7 @@ function FHMainContent(props: any) {
             setTitle(t(props.title));
             document.getElementById("FHMainContent")!.scrollIntoView();
         }
-    }, [title]);
+    }, [title,props.query]);
 
     return (
         <>

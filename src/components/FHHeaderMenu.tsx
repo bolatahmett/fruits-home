@@ -41,7 +41,7 @@ function FHHeaderMenu(props: any) {
                     ProductType: "fruit"
                 };
                 break;
-            case "organic_fruits":
+            case "organicfruits":
                 query = {
                     IsOrganic: true,
                     ProductType: "fruit"
@@ -53,7 +53,7 @@ function FHHeaderMenu(props: any) {
                     IsSeasonalVegetables: true
                 };
                 break;
-            case "organic_vegetable":
+            case "organic.vegetable":
                 query = {
                     ProductType: "vegetable",
                     IsOrganic: true
@@ -74,7 +74,7 @@ function FHHeaderMenu(props: any) {
 
     const getbreadcrumbItems = () => {
         return breadcrumbItems.map((item: any) => {
-            return <Breadcrumb.Item>{t(item)}</Breadcrumb.Item>
+            return <Breadcrumb.Item>{t("header.menu."+item)}</Breadcrumb.Item>
         });
     }
 
@@ -91,12 +91,12 @@ function FHHeaderMenu(props: any) {
                         title={<span className="submenu-title-wrapper"> <DownCircleOutlined /> {t("fruits")} </span>}>
                         <Menu.Item key="citrus" > <Link to="/">{t("header.menu.citrus")}</Link> </Menu.Item>
                         <Menu.Item key="exoticfruits" > <Link to="/">{t("header.menu.exoticfruits")}</Link> </Menu.Item>
-                        <Menu.Item key="organic_fruits" > <Link to="/">{t("header.menu.organic")} </Link> </Menu.Item>
+                        <Menu.Item key="organicfruits" > <Link to="/">{t("header.menu.organicfruits")} </Link> </Menu.Item>
                     </SubMenu>
                     <SubMenu
                         key="vegetable" title={<span className="submenu-title-wrapper"> <DownCircleOutlined /> {t("vegetable")} </span>}  >
                         <Menu.Item key="seasonalvegetables" > <Link to="/">{t("header.menu.seasonalvegetables")}</Link> </Menu.Item>
-                        <Menu.Item key="organic_vegetable" > <Link to="/">{t("header.menu.organic")}</Link> </Menu.Item>
+                        <Menu.Item key="organicvegetable" > <Link to="/">{t("header.menu.organicvegetable")}</Link> </Menu.Item>
                         <Menu.Item key="greens" > <Link to="/">{t("header.menu.greens")}</Link> </Menu.Item>
                     </SubMenu>
                     <Menu.Item key="aboutus">
