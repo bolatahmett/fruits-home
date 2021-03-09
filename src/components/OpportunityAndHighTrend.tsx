@@ -12,7 +12,8 @@ const OpportunityAndHighTrend = (props: any) => (
                 </h4>
             </Col>
         </Row>
-        <FHContent query={{ IsOpportunity: true }} span={6} type="carousel"></FHContent>
+        {/* <FHContent query={{ IsOpportunity: true }} span={6} type="carousel"></FHContent> */}
+        <FHContent query={{ ProductType: "fruit" }} span={12} type="carousel"></FHContent>
         <Row style={{ marginTop: "50px" }}>
             <Col>
                 <h4 className={"main-page-text"}>
@@ -20,7 +21,8 @@ const OpportunityAndHighTrend = (props: any) => (
                         </h4>
             </Col>
         </Row>
-        <FHContent query={{ IsHighTrend: true }} span={18} type="carousel"></FHContent>
+        {/* <FHContent query={{ IsOpportunity: true }} span={6} type="carousel"></FHContent> */}
+        <FHContent query={{ProductType: "vegetable"}} span={12} type="carousel"></FHContent>
     </>
 );
 
