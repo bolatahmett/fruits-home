@@ -10,13 +10,13 @@ export async function removeItem(jsonQuery: any): Promise<any> {
 }
 
 export async function getItem(jsonQuery: any): Promise<any> {
-    return await apiCall("https://fruitshome.ru/api/getItem", jsonQuery);
+    return await firebaseApiCall("");
+    // return await apiCall("https://fruitshome.ru/api/getItem", jsonQuery);
 }
 
 export async function getAllItems(): Promise<any> {
+    return await firebaseApiCall("");
     // const result = await apiCall("https://fruitshome.ru/api/getAll");
-    const result = await firebaseApiCall("");
-    return result;
 }
 
 
@@ -52,10 +52,16 @@ export async function apiCall(url: any, requestBody: any = ""): Promise<any> {
 
 export async function firebaseApiCall(params:any) {
     let result = undefined;
-    var ref = database.ref("products");
-        ref.once("value", (snapshot: { exists: () => any; }) => {
-            console.log(snapshot);     
-            result = snapshot;           
-        });
-        return result;
+    var ref = database.ref("products")
+    await ref.once('value').then((snapshot) => {
+        var JSON_Obj = snapshot.val();
+
+        var tempArr = [];
+        for (var key in JSON_Obj) {
+           tempArr.push(JSON_Obj[key]);
+       }
+
+        result = tempArr;
+    });
+    return result;
 }
