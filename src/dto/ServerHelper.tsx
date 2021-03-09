@@ -1,4 +1,5 @@
 import axios from 'axios';
+import { database } from './FireBaseDB';
 
 export async function addItem(jsonQuery: any): Promise<any> {
     return await apiCall("https://fruitshome.ru/api/addItem", jsonQuery);
@@ -13,7 +14,8 @@ export async function getItem(jsonQuery: any): Promise<any> {
 }
 
 export async function getAllItems(): Promise<any> {
-    const result = await apiCall("https://fruitshome.ru/api/getAll");
+    // const result = await apiCall("https://fruitshome.ru/api/getAll");
+    const result = await firebaseApiCall("");
     return result;
 }
 
@@ -46,4 +48,14 @@ export async function apiCall(url: any, requestBody: any = ""): Promise<any> {
             console.log("hata", error);
         });
     return result;
+}
+
+export async function firebaseApiCall(params:any) {
+    let result = undefined;
+    var ref = database.ref("products");
+        ref.once("value", (snapshot: { exists: () => any; }) => {
+            console.log(snapshot);     
+            result = snapshot;           
+        });
+        return result;
 }

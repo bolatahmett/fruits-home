@@ -1,4 +1,8 @@
-[{
+{
+  "products":
+  {
+  
+    "-MPpT9fBhwERYr5PRqv-": {
  
   "ImageUrl": "tomatoes.jpeg",
   "AltInfo": "tomatoes",
@@ -14,7 +18,8 @@
   "IsOrganic": true,
   "IsSeasonalVegetables": false,
   "IsGreens": false
-},{
+},
+"-MPpZTrMr8TJiiMx8S8E" : {
  
   "ImageUrl": "orange.jpg",
   "AltInfo": "example",
@@ -30,7 +35,8 @@
   "IsOrganic": true,
   "IsSeasonalVegetables": false,
   "IsGreens": false
-},{
+},
+"-MPpZwlINHZzc5s4TF0T": {
  
   "ImageUrl": "potato.jpg",
   "AltInfo": "potato",
@@ -46,7 +52,8 @@
   "IsOrganic": true,
   "IsSeasonalVegetables": false,
   "IsGreens": false
-},{
+},
+"-MPpcHi5Vd5q5UYPBO12" : {
  
   "ImageUrl": "onion.jpg",
   "AltInfo": "onion",
@@ -62,7 +69,8 @@
   "IsOrganic": true,
   "IsSeasonalVegetables": false,
   "IsGreens": false
-},{
+},
+"-MPpcHi5Vd5q5UYPBO12" :{
    
   "ImageUrl": "garlic.jpg",
   "AltInfo": "garlic",
@@ -78,7 +86,8 @@
   "IsOrganic": true,
   "IsSeasonalVegetables": false,
   "IsGreens": false
-},{
+},
+"-MPpciigWeTf-4Xv5Rgs" :{
   
   "ImageUrl": "leek.jpg",
   "AltInfo": "leek",
@@ -94,7 +103,8 @@
   "IsOrganic": true,
   "IsSeasonalVegetables": false,
   "IsGreens": false
-},{
+},
+"-MPpd_IAf1F0BT_Javrj" :{
  
   "ImageUrl": "carrot.jpg",
   "AltInfo": "carrot",
@@ -110,7 +120,8 @@
   "IsOrganic": true,
   "IsSeasonalVegetables": false,
   "IsGreens": false
-},{
+},
+"-MPpdcJAOzCp_u-94PiC" :{
  
   "ImageUrl": "grapefruit.jpg",
   "AltInfo": "example",
@@ -126,7 +137,8 @@
   "IsOrganic": true,
   "IsSeasonalVegetables": false,
   "IsGreens": false
-},{
+},
+"-MPpe3_4ZIPgMMWTSwjz" :{
   
   "ImageUrl": "strawberry.jpg",
   "AltInfo": "example",
@@ -142,7 +154,8 @@
   "IsOrganic": true,
   "IsSeasonalVegetables": false,
   "IsGreens": false
-},{
+},
+"-MPpfwg846DGec9NW067" :{
  
   "ImageUrl": "pepper.jpg",
   "AltInfo": "pepper",
@@ -158,7 +171,8 @@
   "IsOrganic": true,
   "IsSeasonalVegetables": false,
   "IsGreens": false
-},{
+},
+"-MPphR2xB10qZM4nH08J" :{
  
   "ImageUrl": "cucumber.jpeg",
   "AltInfo": "cucumber",
@@ -174,7 +188,8 @@
   "IsOrganic": true,
   "IsSeasonalVegetables": false,
   "IsGreens": false
-},{
+},
+"-MPrXxFA6lb5MCr0EcWF" :{
  
   "ImageUrl": "eggplant.jpg",
   "AltInfo": "eggplant",
@@ -190,7 +205,8 @@
   "IsOrganic": true,
   "IsSeasonalVegetables": false,
   "IsGreens": false
-},{
+},
+"-MPrYUftRE9qDk8WeGTN" :{
  
   "ImageUrl": "cabbage.jpg",
   "AltInfo": "cabbage",
@@ -206,7 +222,7 @@
   "IsOrganic": true,
   "IsSeasonalVegetables": false,
   "IsGreens": false
-},{
+},"-MPrYWvQIXIM86pmgfbf" :{
  
   "ImageUrl": "",
   "AltInfo": "Dkdkdkd",
@@ -222,7 +238,7 @@
   "IsOrganic": true,
   "IsSeasonalVegetables": false,
   "IsGreens": false
-},{
+},"-MPrYZJvvIvzDta77Mmq" :{
  
   "ImageUrl": "spinach.jpg",
   "AltInfo": "spinach",
@@ -238,4 +254,7 @@
   "IsOrganic": true,
   "IsSeasonalVegetables": false,
   "IsGreens": false
-}]
+}
+
+  }
+}
