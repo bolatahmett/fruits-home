@@ -79,7 +79,6 @@ class FHContentCard extends React.Component<FHContentCardProps, FHContentCardSta
         return (
             <>
                 <Card
-
                     actions={[
                         <>
                             <img alt="Add Basket" onClick={this.handleAddBasket} src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABmJLR0QA/wD/AP+gvaeTAAABJ0lEQVRIidXUzypEcRjG8Y8RUSw0F0BK2Sq5BjPKym1YTpZjiWtQNtzBLC3s3cBkpRkLyRJDYSzOK6dxZuYMh/jW26n39/ye5/evwx+jG5WbUnxfU5OPCl4UeE4FPKDcRzdsB8uYHhTUCIPaFwIm0EQ7gjKphsElxkcM2I6xZoRlMoaLEFajt5My7q16aGZxHb3Nfubv1ELYSPWyQuqp8f3onQ0zhznc4wWLfULS5gvoSF7iap4AkqfaxUFPfzcqzUloj/Oaw0pMusXUAN2aZOUdzI8SAOf6X25v7Y1qXsZNDuOO5IgG7TKTwzA4lTzdQpnBI56wVLQ5TOJO/vNPV2625LuDLwf8OBu4kvwZKwXoPtH2se3Wd3SlrOZvUJGsroX1AnT/mDcWLISsf1YYZAAAAABJRU5ErkJggg==" />

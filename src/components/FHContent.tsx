@@ -40,7 +40,7 @@ function FHContent(props: any) {
     }
 
     return <>
-        <Row style={{ marginTop: "40px", marginBottom: "20px" }}>
+        <Row justify="center" style={{ marginTop: "40px", marginBottom: "20px" }}>
             <Col>
                 <Spin spinning={spinTip !== ""} tip={spinTip} size={"large"}> {
                     defaultContent
