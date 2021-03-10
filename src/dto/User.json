@@ -1,0 +1,20 @@
+{
+    "user": {
+        "-MPpT9fAhwEZYr5PRqv-": {
+            "ImageUrl": "tomatoes.jpeg",
+            "AltInfo": "tomatoes",
+            "Title": "помидоры",
+            "Description": "подробное объяснение",
+            "Price": "20",
+            "StockStatus": "1",
+            "ProductType": "vegetable",
+            "ProductCode": "tomatoes",
+            "Status": "",
+            "IsExoticFruits": false,
+            "IsCitrus": false,
+            "IsOrganic": true,
+            "IsSeasonalVegetables": false,
+            "IsGreens": false
+        }
+    }
+}

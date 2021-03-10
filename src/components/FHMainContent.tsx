@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { connect } from 'react-redux';
 import { useTranslation } from 'react-i18next';
-import { Divider, Row, Col, Card, Button } from 'antd';
+import { Divider, Row, Col, Card, Button, PageHeader } from 'antd';
 import Meta from 'antd/lib/card/Meta';
 import FHContent from './FHContent';
 import {
@@ -22,7 +22,7 @@ function FHMainContent(props: any) {
             setTitle(t(props.title));
             document.getElementById("FHMainContent")!.scrollIntoView();
         }
-    }, [title,props.query]);
+    }, [title, props.query]);
 
     return (
         <>
@@ -76,15 +76,16 @@ function FHMainContent(props: any) {
                         </Col>
                     </Row>
                     {!isUndefined(contentDetail) && <Divider></Divider>}
-                    <Row >
-                        <Col span={16}>
-                            <h3 style={{ textAlign: "center" }}>
-                                {title !== "" && title}
-                            </h3>
-                        </Col>
-                        <Col span={2}>
-                            {title !== "" && <Button danger shape="circle" size="small" onClick={() => { setContentDetail(undefined); setTitle(t("")); }}><CloseOutlined /></Button>}
-                        </Col>
+
+                    <PageHeader
+                        style={{ marginTop: "10px", marginLeft: "10%", marginRight: "10%" }}
+                        ghost={false}
+                        title={title !== "" && title}
+                        extra={title !== "" && <Button danger shape="circle" size="small" onClick={() => { setContentDetail(undefined); setTitle(t("")); }}><CloseOutlined /></Button>}
+                    >
+                    </PageHeader>
+
+                    <Row>
                         <Col xs={24} sm={24} md={24} lg={24} xl={24}>
                             {isUndefined(contentDetail) ? <></> : <FHContent query={contentDetail} span={24}></FHContent>}
                         </Col>

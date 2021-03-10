@@ -10,12 +10,12 @@ export async function removeItem(jsonQuery: any): Promise<any> {
 }
 
 export async function getItem(jsonQuery: any): Promise<any> {
-    return await firebaseApiCall(jsonQuery);
+    return await firebaseApiCall("products", jsonQuery);
     // return await apiCall("https://fruitshome.ru/api/getItem", jsonQuery);
 }
 
 export async function getAllItems(): Promise<any> {
-    return await firebaseApiCall({});
+    return await firebaseApiCall("products", {});
     // const result = await apiCall("https://fruitshome.ru/api/getAll");
 }
 
@@ -29,12 +29,14 @@ export async function removeUser(jsonQuery: any): Promise<any> {
 }
 
 export async function getUser(jsonQuery: any): Promise<any> {
-    return await apiCall("https://fruitshome.ru/api/getUser", jsonQuery);
+    return await firebaseApiCall("user", jsonQuery);
+    // return await apiCall("https://fruitshome.ru/api/getUser", jsonQuery);
 }
 
 export async function getAllUsers(): Promise<any> {
-    const result = await apiCall("https://fruitshome.ru/api/getAllUsers");
-    return result;
+    return await firebaseApiCall("user", {});
+    // const result = await apiCall("https://fruitshome.ru/api/getAllUsers");
+    // return result;
 }
 
 export async function apiCall(url: any, requestBody: any = ""): Promise<any> {
@@ -50,22 +52,23 @@ export async function apiCall(url: any, requestBody: any = ""): Promise<any> {
     return result;
 }
 
-export async function firebaseApiCall(params:any) {
+export async function firebaseApiCall(tableName: any, params: any) {
+    debugger;
     let result = undefined;
-    var ref = database.ref("products")
+    var ref = database.ref(tableName)
     await ref.once('value').then((snapshot) => {
         var JSON_Obj = snapshot.val();
 
         var tempArr = [];
         for (var key in JSON_Obj) {
-           tempArr.push(JSON_Obj[key]);
-       }
+            tempArr.push(JSON_Obj[key]);
+        }
 
         result = tempArr;
 
         for (var key in params) {
-            result =  result.filter(item=>{
-                if(item[key] === params[key]){
+            result = result.filter(item => {
+                if (item[key] === params[key]) {
                     return item;
                 }
             });

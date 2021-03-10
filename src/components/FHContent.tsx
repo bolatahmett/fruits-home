@@ -24,11 +24,11 @@ function FHContent(props: any) {
     };
 
     const ContentCardItems: ContentCard[] = productItems as unknown as ContentCard[];
-    let defaultContent: React.ReactNode = <></>;
+    let defaultContent: React.ReactNode = <p style={{ backgroundColor: "red" }}>Ürün Bulunamadı.</p>;
     if (props.type === "carousel") {
         defaultContent = <FHContentCarousel items={ContentCardItems} id={uuidv4.v4()}></FHContentCarousel>;
     } else {
-        defaultContent = ContentCardItems && ContentCardItems.length > 0 && ContentCardItems.map((item: any, index: number) => {
+        defaultContent = ContentCardItems && ContentCardItems.length > 0 ? ContentCardItems.map((item: any, index: number) => {
             return (
                 <Row className={"fhcontent"}>
                     <Col xs={24} sm={24} md={props.span} lg={props.span} xl={props.span} >
@@ -36,12 +36,17 @@ function FHContent(props: any) {
                     </Col>
                 </Row>
             )
-        });
+        }) :
+            <Row>
+                <Col xs={24} sm={24} md={props.span} lg={props.span} xl={props.span} >
+                    <p style={{ textAlign: "center", color: "red" }}>Ürün Bulunamadı.</p>
+                </Col>
+            </Row>;
     }
 
     return <>
-        <Row justify="center" style={{ marginTop: "40px", marginBottom: "20px" }}>
-            <Col>
+        <Row justify="center" style={{ marginBottom: "20px", width: "100% !important;" }}>
+            <Col style={{ width: "100%" }}>
                 <Spin spinning={spinTip !== ""} tip={spinTip} size={"large"}> {
                     defaultContent
                 } </Spin>
