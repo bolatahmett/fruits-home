@@ -3,20 +3,21 @@ import {
     Link
 } from "react-router-dom";
 
-import { Menu, Row, Col, Breadcrumb } from "antd";
+import { Menu, Row, Col, Breadcrumb, Alert } from "antd";
 import SubMenu from "antd/lib/menu/SubMenu";
 import { HomeOutlined, InfoCircleOutlined, DownCircleOutlined } from '@ant-design/icons';
 import { useTranslation } from "react-i18next";
 import { connect } from 'react-redux';
 import { setProductOnHomePage } from './../redux/actions/actions';
+import TextLoop from "react-text-loop";
 
 function FHHeaderMenu(props: any) {
 
     const { t } = useTranslation();
-    const [breadcrumbItems, setbreadcrumbItems] = useState(["homepage"])
+    const [breadcrumbItems, setbreadcrumbItems] = useState([])
 
     const handleClick = (e: any) => {
-        setbreadcrumbItems(e.keyPath.reverse());
+        e.key === "homepage" ? setbreadcrumbItems([]) : setbreadcrumbItems(e.keyPath.reverse());
         let query = {};
         switch (e.key) {
             case "fruits":
@@ -79,6 +80,7 @@ function FHHeaderMenu(props: any) {
     }
 
     return (
+        <>
         <Row className={"fhheadermenu"}>
             <Col xs={24} sm={24} md={24} lg={20} xl={18}>
                 <Menu onClick={handleClick} mode="horizontal">
@@ -109,7 +111,21 @@ function FHHeaderMenu(props: any) {
                 </Breadcrumb>
             </Col>
         </Row>
-
+        <Row style={{ width: "100%" }} justify={"center"}>
+    <Col xs={24} sm={24} md={24} lg={20} xl={18}>
+        <Alert
+            banner
+            message={
+                <TextLoop mask>
+                    <div>{t("textloop.text.1")}</div>
+                    <div>{t("textloop.text.2")}</div>
+                    <div>{t("textloop.text.3")}</div>
+                </TextLoop>
+            }
+        />
+    </Col>
+</Row>
+</>
     )
 
 }

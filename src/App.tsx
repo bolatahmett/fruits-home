@@ -5,8 +5,6 @@ import 'antd/dist/antd.css';
 import FHHeader from './components/FHHeader';
 import DetailPage from './pages/DetailPage';
 import Home from './pages/Home';
-
-
 import {
   BrowserRouter as Router,
   Route,
@@ -15,6 +13,10 @@ import BasketResult from './pages/BasketResult';
 import LoginPage from './pages/LoginPage';
 import RegisterPage from './pages/RegisterPage';
 import EditContent from './pages/EditContent';
+import AdminPanelPage from './pages/AdminPanelPage';
+import OrdersPage from './pages/OrdersPage';
+import PersonalInfoPage from './pages/PersonalInfoPage';
+import MessagesPage from './pages/MessagesPage';
 
 const { Header, Footer, Content } = Layout;
 
@@ -39,6 +41,10 @@ export default class App extends React.Component<any, any> {
                       <Route exact path="/login" component={LoginPage} />
                       <Route exact path="/register" component={RegisterPage} />
                       <Route exact path="/edit-content" component={EditContent} />
+                      <Route exact path="/adminpanel" component={AdminPanelPage} />
+                      <Route exact path="/orders" component={OrdersPage} />
+                      <Route exact path="/personalinfo" component={PersonalInfoPage} />
+                      <Route exact path="/messages" component={MessagesPage} />
                       <Route path="/detail-page/fruits/strawberry" component={() => <DetailPage typeOfContent={"fruits"} typeOfSubContent={"strawberry"} />} />
                       <Route path="/detail-page/fruits/orange" component={() => <DetailPage typeOfContent={"fruits"} typeOfSubContent={"orange"} />} />
                       <Route path="/detail-page/fruits/grapefruit" component={() => <DetailPage typeOfContent={"fruits"} typeOfSubContent={"grapefruit"} />} />

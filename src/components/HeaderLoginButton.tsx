@@ -31,20 +31,34 @@ function HeaderLoginButton(props: any) {
     </> :
         <>
             <div>
+                {
+                    props.user.IsAdmin && 
+                <p> 
+                    <Link to={`/adminpanel`}>
+                        <Button className="login" type="link">{t("header.admin.panel")} </Button> 
+                    </Link>
+                </p>
+                }
                 <p>
-                    <Button className="login" type="link">{t("header.orders.button")}</Button>
+                    <Link to={`/orders`}>
+                        <Button className="login" type="link">{t("header.orders.button")}</Button>
+                    </Link>
                 </p>
                 <p>
-                    <Button className="login" type="link">{t("header.details.button")}</Button>
+                    <Link to={`/personalinfo`}> 
+                        <Button className="login" type="link">{t("header.personal.info")}</Button>
+                    </Link>
                 </p>
                 <p>
-                    <Button className="login" type="link">{t("header.messages.button")}</Button>
+                    <Link to={`/messages`}>
+                        <Button className="login" type="link">{t("header.messages.button")}</Button>
+                    </Link>
                 </p>
                 <p>
                     <Button className="login" type="link" onClick={exitUser}>{t("header.exit.button")}</Button>
                 </p>
             </div>
-        </>;
+        </>
     return (
 
         <>

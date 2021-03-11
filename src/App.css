@@ -44,7 +44,7 @@
 }
 .ant-layout-header{
    background-color: #fff !important;
-   height: 300px !important;
+   height: 100px !important;
    padding: 0 0px !important;
 }
 .ant-layout-footer {
@@ -224,5 +224,3 @@ background:#fff !important;
   font-style: oblique;
   font-family: cursive;
 }
-
- 

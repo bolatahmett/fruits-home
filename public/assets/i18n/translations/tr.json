@@ -52,5 +52,7 @@
     "header.menu.potatoesonionsandgarlic": "Patates, soğanve sarımsak",
     "header.menu.opportunity": "Fırsat Ürünü",
     "header.menu.highTrend": "Çok Satanlar",
-    "total.amount": "Toplam Tutar"
+    "total.amount": "Toplam Tutar",
+    "header.personal.info": "Kişisel Bilgiler",
+    "header.admin.panel": "Admin Panel"
 }
